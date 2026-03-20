@@ -1,8 +1,9 @@
 {
   imports = [
     ./helix.nix
-    ./kitty.nix
+    ./terminal
     ./shell
     ./desktop
+    ./utils
   ];
 }

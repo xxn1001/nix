@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, user, ... }:
 {
   programs.niri.settings = {
     binds = with config.lib.niri.actions;
@@ -9,7 +9,8 @@
       "${mod}+F".action = maximize-column;
       "${mod}+Alt+F".action = fullscreen-window;
       "${mod}+Q".action = close-window;
-      "${mod}+D".action = spawn "fuzzel";
+      "${mod}+Z".action = spawn "tofi-drun" "--drun-launch=true";
+      "${mod}+X".action = spawn "/home/${user}/scripts/tofi/powermenu";
     };
   };
 }

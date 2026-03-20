@@ -1,11 +1,10 @@
 { inputs, pkgs, ... }:
 {
   imports = [
-    # ./tofi.nix
-    ./fuzzel.nix
-    # ./mako.nix
-    # ./niri
-    # ./swhkd.nix
+    ./tofi.nix
+    ./mako.nix
+    ./niri
+    ./fonts.nix
     # ./dms.nix
     # ./caelestia.nix
     # ./noctalia.nix
@@ -19,10 +18,10 @@
     wmname
     # inputs.hexecute.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
-  # home.file."scripts" = {
-  #   source = ./scripts;
-  #   recursive = true;
-  # };
+  home.file."scripts" = {
+    source = ./scripts;
+    recursive = true;
+  };
   home.sessionVariables.QT_QPA_PLATFORMTHEME = "gtk3";
   services.wl-clip-persist.enable = true;
 }
