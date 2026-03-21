@@ -45,11 +45,11 @@
           background-color = base01;
         }) config.monitors;
 
-        binds = with config.lib.niri.actions; {
-          "Mod+Return".action = spawn "kitty";
-          "Mod+P".action = spawn [ "sh" "-c" "$(tofi-run)" ];
-          "Mod+Shift+C".action = spawn "/home/${user}/scripts/tofi/colorscheme";
-        };
+        # binds = with config.lib.niri.actions; {
+        #   "Mod+Return".action = spawn "kitty";
+        #   "Mod+P".action = spawn [ "sh" "-c" "$(tofi-run)" ];
+        #   "Mod+Shift+C".action = spawn "/home/${user}/scripts/tofi/colorscheme";
+        # };
 
         window-rules =
           let

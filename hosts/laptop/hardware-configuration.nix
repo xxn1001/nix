@@ -5,41 +5,52 @@
 
 {
   imports =
-    [ (modulesPath + "/profiles/qemu-guest.nix")
+    [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "ahci" "xhci_pci" "virtio_pci" "sr_mod" "virtio_blk" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/373e6339-e2dd-4f29-b6aa-c54382dd580d";
+    { device = "/dev/disk/by-uuid/249a00ab-0e6f-4675-ad17-19af47b7c2fa";
       fsType = "btrfs";
-      options = [ "subvol=@" "compress=zstd" ];
+      options = [ "subvol=@" "compress=zstd" "noatime" "ssd" "discard=async" ];
+    };
+
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/249a00ab-0e6f-4675-ad17-19af47b7c2fa";
+      fsType = "btrfs";
+      options = [ "subvol=@home" "compress=zstd" "noatime" "ssd" "discard=async" ];
+    };
+
+  fileSystems."/nix" =
+    { device = "/dev/disk/by-uuid/249a00ab-0e6f-4675-ad17-19af47b7c2fa";
+      fsType = "btrfs";
+      options = [ "subvol=@nix" "compress=zstd" "noatime" "ssd" "discard=async" ];
+    };
+
+  fileSystems."/swap" =
+    { device = "/dev/disk/by-uuid/249a00ab-0e6f-4675-ad17-19af47b7c2fa";
+      fsType = "btrfs";
+      options = [ "subvol=@swap" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/43D6-1BE0";
+    { device = "/dev/disk/by-uuid/5860-25E7";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/373e6339-e2dd-4f29-b6aa-c54382dd580d";
+  fileSystems."/home/Data" =
+    { device = "/dev/disk/by-uuid/c69d0d30-cc38-42d1-b5eb-211686888d41";
       fsType = "btrfs";
-      options = [ "subvol=@home" "compress=zstd" ];
+      options = [ "compress=zstd" "noatime" "ssd" "discard=async" ];
     };
 
-  fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/373e6339-e2dd-4f29-b6aa-c54382dd580d";
-      fsType = "btrfs";
-      options = [ "subvol=@nix" "compress=zstd" ];
-    };
-
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/f367ffe1-b0b6-4fff-920a-469584e9cd42"; }
-    ];
+  swapDevices = [ { device = "/swap/swapfile"; } ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

@@ -12,6 +12,8 @@
       "${mod}+Z".action = spawn "tofi-drun" "--drun-launch=true";
       "${mod}+X".action = spawn "/home/${user}/scripts/tofi/powermenu";
       "${mod}+Shift+W".action = spawn "/home/${user}/scripts/change-wal-niri";
+      "${mod}+P".action = spawn [ "sh" "-c" "$(tofi-run)" ];
+      "${mod}+Shift+C".action = spawn "/home/${user}/scripts/tofi/colorscheme";
     };
   };
 }
