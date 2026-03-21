@@ -46,15 +46,16 @@
     wl-color-picker
     loupe
     showtime
-    nautilus
     gnome-disk-utility
     upower
+    bazaar
   ];
   imports = [
     # ./eye-candy.nix
     # ./obs.nix
     # ./music.nix
     # ./ai.nix
+    ./nautilus.nix
   ];
   programs.pay-respects.enable = true;
 }

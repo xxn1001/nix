@@ -54,7 +54,7 @@
  
     openssh.enable = true;
 
-    # flatpak.enable = true;
+    flatpak.enable = true;
 
     upower.enable = true;
 

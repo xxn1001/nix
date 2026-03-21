@@ -14,7 +14,7 @@
     swaybg
     kanshi
     wlsunset
-    # xwayland-satellite
+    xwayland-satellite
     wmname
     # inputs.hexecute.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];

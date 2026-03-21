@@ -32,6 +32,7 @@
 
     sessionVariables = {
       NIXPKGS_ALLOW_UNFREE = "1";
+      XDG_DATA_DIRS = "${config.home.homeDirectory}/.nix-profile/share:${config.home.homeDirectory}/.local/share:/run/current-system/sw/share:$XDG_DATA_DIRS";
     };
 
   #   activation = {

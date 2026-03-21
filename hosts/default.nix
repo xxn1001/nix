@@ -17,6 +17,7 @@ let
     ../nix/nixpkgs.nix
     inputs.stylix.homeModules.stylix
     inputs.niri.homeModules.niri
+    inputs.zen-browser.homeModules.default
     # inputs.nixvim.homeModules.nixvim
     # inputs.agenix.homeManagerModules.default
     # ../secrets/age.nix

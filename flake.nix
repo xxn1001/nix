@@ -94,5 +94,6 @@
     };
     hexecute.url = "github:ThatOtherAndrew/Hexecute";
     awww.url = "git+https://codeberg.org/LGFae/awww";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 }
