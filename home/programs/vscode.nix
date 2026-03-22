@@ -22,6 +22,7 @@
 
       userSettings = {
         "docker.dockerPath" = "podman";
+        "docker.dockerHost" = "unix:///run/user/1000/podman/podman.sock";
         "editor.lineNumbers" = "on";
         "editor.renderWhitespace" = "selection";
         "editor.minimap.enabled" = false;

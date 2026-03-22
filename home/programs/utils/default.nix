@@ -52,7 +52,7 @@
   ];
   imports = [
     # ./eye-candy.nix
-    # ./obs.nix
+    ./obs.nix
     # ./music.nix
     # ./ai.nix
     ./nautilus.nix
