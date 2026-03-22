@@ -51,7 +51,7 @@
     bazaar
   ];
   imports = [
-    # ./eye-candy.nix
+    ./eye-candy.nix
     ./obs.nix
     # ./music.nix
     # ./ai.nix
