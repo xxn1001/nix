@@ -52,7 +52,7 @@
 
     gvfs.enable = true;
  
-    openssh.enable = true;
+    openssh.enable = false;
 
     flatpak.enable = true;
 
