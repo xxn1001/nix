@@ -49,6 +49,7 @@
     gnome-disk-utility
     upower
     bazaar
+    podman-compose
   ];
   imports = [
     ./eye-candy.nix
@@ -56,6 +57,9 @@
     # ./music.nix
     # ./ai.nix
     ./nautilus.nix
+    ./screenshots.nix
+    ./kubernetes.nix
+    ./lazygit.nix
   ];
   programs.pay-respects.enable = true;
 }

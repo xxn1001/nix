@@ -1,20 +1,29 @@
 #!/bin/sh
 
+# 定义路径
 current_profile=~/.local/state/nix/profiles/home-manager
 current_os_profile=/nix/var/nix/profiles/system
-specialisations=$(find /nix/store/*home-manager-generation/ -lname "$(realpath $current_profile)")
-os_specialisations=$(find /nix/store/*nixos-system* -lname "$(realpath $current_os_profile)")
+
+# 寻找 Home Manager 的 Specialisation 路径
+specialisations=$(find /nix/store/*home-manager-generation/ -lname "$(realpath $current_profile)" 2>/dev/null)
 if [ -z "$specialisations" ]; then
-    specialisations=$current_profile/specialisation
+    specialisations="$current_profile/specialisation"
 else
-    specialisations=$(dirname $specialisations | xargs ls -dt | head -n1)
+    specialisations=$(dirname "$specialisations" | xargs ls -dt | head -n1)/specialisation
 fi
+
+# 寻找 NixOS 系统层的 Specialisation 路径
+os_specialisations=$(find /nix/store/*nixos-system* -lname "$(realpath $current_os_profile)" 2>/dev/null)
 if [ -z "$os_specialisations" ]; then
-    os_specialisations=$current_os_profile/specialisation
+    os_specialisations="$current_os_profile/specialisation"
 else
-    specialisations=$(dirname $specialisations | xargs ls -dt | head -n1)
+    # 【修复处】这里之前误写成了 specialisations
+    os_specialisations=$(dirname "$os_specialisations" | xargs ls -dt | head -n1)/specialisation
 fi
-colorscheme=$( (ls "$specialisations"; echo default) | tofi --require-match=false)
+
+# 生成菜单并选择
+# 增加一个检查：如果路径不存在，ls 不会报错
+colorscheme=$( ( [ -d "$specialisations" ] && ls "$specialisations"; echo default) | tofi --require-match=false)
 
 if [ -z "$colorscheme" ]; then
     exit 1
@@ -23,5 +32,11 @@ fi
 if [ "$colorscheme" = "default" ]; then
     colorscheme=".."
 fi
-"$specialisations/$colorscheme"/activate > ~/scripts/tofi/t
-doas "$os_specialisations/$colorscheme"/bin/switch-to-configuration switch
+
+# 执行切换
+echo "Activating Home Manager specialisation: $colorscheme"
+"$specialisations/$colorscheme"/activate
+
+echo "Switching System configuration..."
+# 确保你系统里有 doas，否则请改为 sudo
+sudo "$os_specialisations/$colorscheme"/bin/switch-to-configuration switch

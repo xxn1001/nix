@@ -26,11 +26,11 @@
         hotkey-overlay.skip-at-startup = true;
         prefer-no-csd = true;
         
-        input = {
-          focus-follows-mouse.enable = true;
-          touchpad.natural-scroll = false;
-          keyboard.xkb.options = "caps:escape"; 
-        };
+        # input = {
+        #   focus-follows-mouse.enable = true;
+        #   touchpad.natural-scroll = false;
+        #   keyboard.xkb.options = "caps:escape"; 
+        # };
 
         environment = {
           DISPLAY = ":0";

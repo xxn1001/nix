@@ -14,6 +14,10 @@
       "${mod}+Shift+W".action = spawn "/home/${user}/scripts/change-wal-niri";
       "${mod}+P".action = spawn [ "sh" "-c" "$(tofi-run)" ];
       "${mod}+Shift+C".action = spawn "/home/${user}/scripts/tofi/colorscheme";
+      "${mod}+Shift+S".action = spawn "screenshot";
+      "${mod}+Shift+R".action = spawn "wl-color-picker";
+      # "${mod}+Tab".action = config.lib.niri.actions.next-window;
+      # "${mod}+Shift+Tab".action = config.lib.niri.actions.previous-window;
     };
   };
 }
