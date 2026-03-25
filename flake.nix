@@ -1,4 +1,5 @@
 {
+  # large copied from https://github.com/EdenQwQ/nixos
   description = "Sov's NixOS Flake";
 
   outputs =

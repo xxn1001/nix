@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   monitors = {
     "eDP-1" = {
@@ -18,5 +19,16 @@
   };
 
   # 保持 stateVersion 一致（除非你之前改过）
-  home.stateVersion = "23.11"; 
+  home.stateVersion = "23.11";
+  stylix.cursor = {
+    package = pkgs.hei-cursors;
+    name = "hei";
+    size = 36;
+  };
+  programs.niri.settings = {
+    cursor = {
+      theme = "hei";
+      size = 36;
+    };
+  };
 }
