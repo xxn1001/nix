@@ -23,12 +23,12 @@
   stylix.cursor = {
     package = pkgs.hei-cursors;
     name = "hei";
-    size = 36;
+    size = 48;
   };
   programs.niri.settings = {
     cursor = {
       theme = "hei";
-      size = 36;
+      size = 48;
     };
   };
 }
