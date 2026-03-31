@@ -15,14 +15,16 @@
         # 开发辅助
         jnoortheen.nix-ide
         mkhl.direnv
-        eamodio.gitlens
+        # eamodio.gitlens
         ms-toolsai.jupyter
         james-yu.latex-workshop
       ];
 
       userSettings = {
-        "docker.dockerPath" = "podman";
-        "docker.dockerHost" = "unix:///run/user/1000/podman/podman.sock";
+        "containers.containerClient" = "com.microsoft.visualstudio.containers.podman";
+        "containers.orchestratorClient" = "com.microsoft.visualstudio.orchestrators.podmancompose";
+        # "docker.dockerHost" = "unix:///run/user/1000/podman/podman.sock";
+        "dev.containers.dockerPath" = "podman";
         "editor.lineNumbers" = "on";
         "editor.renderWhitespace" = "selection";
         "editor.minimap.enabled" = false;
