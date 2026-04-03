@@ -50,6 +50,8 @@
     upower
     bazaar
     podman-compose
+    scrcpy
+    android-tools
   ];
   imports = [
     ./eye-candy.nix

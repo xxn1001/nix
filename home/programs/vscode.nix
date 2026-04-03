@@ -10,13 +10,12 @@
         # 容器与基础架构
         ms-azuretools.vscode-docker
         ms-vscode-remote.remote-containers
+        ms-vscode-remote.remote-ssh
         ms-kubernetes-tools.vscode-kubernetes-tools
         redhat.vscode-yaml
         # 开发辅助
         jnoortheen.nix-ide
         mkhl.direnv
-        # eamodio.gitlens
-        ms-toolsai.jupyter
         james-yu.latex-workshop
       ];
 
