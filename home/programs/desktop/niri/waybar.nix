@@ -119,7 +119,9 @@ in
     enable = true; # 已取消注释，确保软件包被安装
     systemd = {
       enable = true;
-      target = config.wayland.systemd.target;
+      targets = [
+        config.wayland.systemd.target
+      ];
     };
   };
 
