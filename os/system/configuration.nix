@@ -109,6 +109,7 @@
       home-manager
       polkit
       polkit_gnome
+      libguestfs-with-appliance
     ];
 
     variables = {
@@ -153,7 +154,7 @@
     podman = {
       enable = true;
       dockerCompat = true;
-      dockerSocket.enable = true;
+      dockerSocket.enable = false;
       defaultNetwork.settings.dns_enabled = true;
     };
 
