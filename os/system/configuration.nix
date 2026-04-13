@@ -150,14 +150,5 @@
 
   virtualisation = {
     libvirtd.enable = true;
-
-    podman = {
-      enable = true;
-      dockerCompat = true;
-      dockerSocket.enable = false;
-      defaultNetwork.settings.dns_enabled = true;
-    };
-
-    oci-containers.backend = "podman";
   };
 }
