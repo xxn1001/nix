@@ -48,6 +48,9 @@ let
             host
             user
             ;
+          stable-pkgs = import inputs.nixpkgs-stable {
+            system = "x86_64-linux";
+          };
         }
         // extraOSArgs;
         modules = extraOSModules ++ sharedOSModules;
@@ -62,6 +65,9 @@ let
             host
             user
             ;
+          stable-pkgs = import inputs.nixpkgs-stable {
+            system = "x86_64-linux";
+          };
         }
         // extraHomeArgs;
         modules = extraHomeModules ++ sharedHomeModules;

@@ -1,10 +1,4 @@
-{ pkgs, inputs, config, ... }:
-let
-  stable-pkgs = import inputs.nixpkgs-stable {
-    system = pkgs.system;
-    config = config.nixpkgs.config;
-  };
-in
+{ pkgs, stable-pkgs, ... }:
 {
   environment.systemPackages = [
     stable-pkgs.gvisor
