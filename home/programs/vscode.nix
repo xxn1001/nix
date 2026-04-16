@@ -20,6 +20,10 @@
       ];
 
       userSettings = {
+        "extensions.autoCheckUpdates" = false;
+        "extensions.autoUpdate" = false;
+        "settingsSync.ignoredSettings" = [];
+        "workbench.settings.useSplitJSON" = true;
         "containers.containerClient" = "com.microsoft.visualstudio.containers.podman";
         "containers.orchestratorClient" = "com.microsoft.visualstudio.orchestrators.podmancompose";
         # "docker.dockerHost" = "unix:///run/user/1000/podman/podman.sock";

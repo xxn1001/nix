@@ -57,7 +57,7 @@
     ./eye-candy.nix
     ./obs.nix
     # ./music.nix
-    # ./ai.nix
+    ./ai.nix
     ./nautilus.nix
     ./screenshots.nix
     ./kubernetes.nix
