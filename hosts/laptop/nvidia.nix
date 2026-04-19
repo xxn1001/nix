@@ -45,6 +45,9 @@
     # "video=efifb:off"
   ];
 
+  hardware.enableRedistributableFirmware = true;
+  hardware.cpu.amd.updateMicrocode = true;
+
   # boot.extraModprobeConfig = ''
   #   softdep amdgpu pre: vfio-pci
   #   options vfio-pci ids=1002:164e
