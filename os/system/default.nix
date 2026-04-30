@@ -5,5 +5,6 @@
     ./fonts.nix
     ./firewall.nix
     ./podman.nix
+    ./virtualization.nix
   ];
 }

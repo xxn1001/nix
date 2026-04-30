@@ -90,7 +90,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
-      "libvirtd"
+      # "libvirtd"
       "video"
       "kvm"
     ];
@@ -148,7 +148,7 @@
     niri-flake-polkit.enable = false;
   };
 
-  virtualisation = {
-    libvirtd.enable = true;
-  };
+  # virtualisation = {
+  #   libvirtd.enable = true;
+  # };
 }

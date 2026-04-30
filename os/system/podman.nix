@@ -1,15 +1,15 @@
 { pkgs, stable-pkgs, ... }:
 {
-  environment.systemPackages = [
-    stable-pkgs.gvisor
-  ];
+  # environment.systemPackages = [
+  #   stable-pkgs.gvisor
+  # ];
   
   virtualisation = {
     podman = {
       enable = true;
       dockerCompat = true;
       dockerSocket.enable = false;
-      extraPackages = [ stable-pkgs.gvisor ];
+      # extraPackages = [ stable-pkgs.gvisor ];
       defaultNetwork.settings.dns_enabled = true;
     };
 
