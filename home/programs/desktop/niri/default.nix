@@ -6,7 +6,7 @@
     ./autostart.nix
     ./keybinds.nix
     # ./blur-daemon.nix
-    # ./override-config.nix
+    ./override-config.nix
   ];
 
   programs.niri = {

@@ -116,7 +116,7 @@
       EDITOR = "vim";
       GDK_SCALE = "";
       GDK_DPI_SCALE = "";
-      # NIRI_CONFIG = "/home/${user}/.config/niri/config-override.kdl";
+      NIRI_CONFIG = "/home/${user}/.config/niri/config-override.kdl";
     };
 
     sessionVariables = {

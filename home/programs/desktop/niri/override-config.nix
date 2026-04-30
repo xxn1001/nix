@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, lib, user, ... }:
 with config.lib.stylix.colors.withHashtag;
 let
   extraConfig =
@@ -23,32 +23,8 @@ let
               blur true
           }
       }
-      window-rule {
-          match app-id="ai.moeru.airi"
-          open-floating true
-          background-effect {
-              blur false
-          }
-          border {
-              off
-          }
-          shadow {
-              off
-          }
-      }
       layer-rule {
           match namespace="launcher"
-          background-effect {
-              xray false
-              blur true
-          }
-      }
-      layer-rule {
-          match namespace="noctalia-*"
-          exclude namespace="noctalia-bar-exclusion*"
-          exclude namespace="noctalia-desktop*"
-          exclude namespace="noctalia-osd*"
-          exclude namespace="noctalia-notifications*"
           background-effect {
               xray false
               blur true
@@ -69,18 +45,6 @@ let
               max-height 480
               max-scale 0.5
           }
-
-          binds {
-              Alt+Tab         { next-window; }
-              Alt+Shift+Tab   { previous-window; }
-              Alt+grave       { next-window     filter="app-id"; }
-              Alt+Shift+grave { previous-window filter="app-id"; }
-
-              Mod+Tab         { next-window; }
-              Mod+Shift+Tab   { previous-window; }
-              Mod+grave       { next-window     filter="app-id"; }
-              Mod+Shift+grave { previous-window filter="app-id"; }
-          }
       }
     '';
   finalNiriConfig =
@@ -92,7 +56,7 @@ let
         ''
           output "${config.lib.monitors.mainMonitorName}" {
               hot-corners {
-                  top-right
+                  top-left
               }
         ''
       ]
