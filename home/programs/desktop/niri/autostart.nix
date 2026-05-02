@@ -27,7 +27,7 @@ let
         awww-daemon --namespace "backdrop" &
         # awww restore --namespace "background"
         # awww restore --namespace "backdrop"
-        wlsunset -s 00:00 -S 00:00 -t 5000 -T 5001 &
+        wlsunset -l 39.9 -L 116.4 -t 5000 -T 6500 &
         sleep 0.2
       ''
       + (

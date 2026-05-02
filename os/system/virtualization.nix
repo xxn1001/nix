@@ -4,5 +4,6 @@
     qemu_kvm
     libvirt
     cloud-hypervisor
+    passt
   ];
 }

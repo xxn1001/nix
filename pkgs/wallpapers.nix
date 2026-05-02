@@ -1,11 +1,11 @@
 { stdenvNoCC, fetchurl, lib, ... }:
 let
   wallpapers = [
-    {
-      name = "mygo-watch-tv.png";
-      url = "https://i.imgur.com/FSneBN2.jpg";
-      sha256 = "1pznrjx6rb8qm947q63dzkrmv188h3nrcp8cdmd7hs5gs30azfww";
-    }
+    # {
+    #   name = "mygo-watch-tv.png";
+    #   url = "https://i.imgur.com/FSneBN2.jpg";
+    #   sha256 = "1pznrjx6rb8qm947q63dzkrmv188h3nrcp8cdmd7hs5gs30azfww";
+    # }
     {
       name = "frieren-butterflies.jpg";
       url = "https://i.imgur.com/H1noDhu.jpg";
@@ -21,11 +21,11 @@ let
       url = "https://i.imgur.com/koPV5sz.png";
       sha256 = "031s3v8fp5q2dm95wra898jq9l4i49wlwf97iah6bjqi5ihaxs2x";
     }
-    {
-      name = "mygo-train.jpg";
-      url = "https://i.imgur.com/OzR8c12.jpg";
-      sha256 = "0fnwasnr19wfyhxa5yq7g3315d1641602x7fg8sv1qv95dlj55w2";
-    }
+    # {
+    #   name = "mygo-train.jpg";
+    #   url = "https://i.imgur.com/OzR8c12.jpg";
+    #   sha256 = "0fnwasnr19wfyhxa5yq7g3315d1641602x7fg8sv1qv95dlj55w2";
+    # }
     {
       name = "green-blue-flowers.jpg";
       url = "https://i.imgur.com/Kvjqksw.jpg";
@@ -41,11 +41,11 @@ let
       url = "https://i.imgur.com/BBzCYYQ.png";
       sha256 = "14kjc7zipbwvswjbkzqk4781as6pn31naq26nxknzhmr4z5rhzci";
     }
-    {
-      name = "jiaocha-girl-sea.jpg";
-      url = "https://i.imgur.com/LBowln5.jpeg";
-      sha256 = "0agpr2z7v6q77ypgfsl6b57gac7ncrgf1fh0b5g7g0a53mzib5hm";
-    }
+    # {
+    #   name = "jiaocha-girl-sea.jpg";
+    #   url = "https://i.imgur.com/LBowln5.jpeg";
+    #   sha256 = "0agpr2z7v6q77ypgfsl6b57gac7ncrgf1fh0b5g7g0a53mzib5hm";
+    # }
     {
       name = "muji-monochrome.jpg";
       url = "https://i.imgur.com/F2h7rsD.jpg";
@@ -56,21 +56,21 @@ let
       url = "https://i.imgur.com/qE6Pr45.jpg";
       sha256 = "1li5ypdvlvdpihiplf5mjj0lvf9gbcwyjslpxgla6wz0fzrwnvgi";
     }
-    {
-      name = "celestia-lunar.jpg";
-      url = "https://i.imgur.com/QIhYwtH.jpg";
-      sha256 = "04dsm4dpv2mddzw7vw77bb0s2mkd4n54hnfa277181smnns7cdzz";
-    }
-    {
-      name = "kita.png";
-      url = "https://i.imgur.com/fn2kneH.png";
-      sha256 = "1pl9234h48xffyvbkvyg3rdxjw0432p8m0jbx7k8pb1l2d2m09a4";
-    }
-    {
-      name = "android-nautilus.jpg";
-      url = "https://i.imgur.com/53Azuew.jpg";
-      sha256 = "09qaj2nzlsk3xv88lsawpy3dnhw5vjcgs1r4ski9wdknbnxvl3b2";
-    }
+    # {
+    #   name = "celestia-lunar.jpg";
+    #   url = "https://i.imgur.com/QIhYwtH.jpg";
+    #   sha256 = "04dsm4dpv2mddzw7vw77bb0s2mkd4n54hnfa277181smnns7cdzz";
+    # }
+    # {
+    #   name = "kita.png";
+    #   url = "https://i.imgur.com/fn2kneH.png";
+    #   sha256 = "1pl9234h48xffyvbkvyg3rdxjw0432p8m0jbx7k8pb1l2d2m09a4";
+    # }
+    # {
+    #   name = "android-nautilus.jpg";
+    #   url = "https://i.imgur.com/53Azuew.jpg";
+    #   sha256 = "09qaj2nzlsk3xv88lsawpy3dnhw5vjcgs1r4ski9wdknbnxvl3b2";
+    # }
     {
       name = "city.jpeg";
       url = "https://i.imgur.com/pUG5lpl.jpeg";
@@ -85,6 +85,21 @@ let
       name = "kyora-autumn.png";
       url = "https://i.imgur.com/rx7hwo4.png";
       sha256 = "00mb4hlhw58iysf5n8krhm2z98m2c6xj89fx7js6vp9ffzds53bc";
+    }
+    {
+      name = "cartoon-rabbit.png";
+      url = "https://imgur.com/Ojd342D.png";
+      sha256 = "1fsmm327bqhq3a64bgriis57qixwc5v52j98l4a0x0xhnhxivgfg";
+    }
+    {
+      name = "snow.png";
+      url = "https://imgur.com/iTDTxqv.png";
+      sha256 = "19skd4jvznpkh89rkyfvqr6p172k89dc9d9cbpa2ckgqwf07ag09";
+    }
+    {
+      name = "director.png";
+      url = "https://imgur.com/ygDs2u1.png";
+      sha256 = "078gprm5pq8sxb6gn41i0isjw2085vwsd1x8q72g1b52jicagsl3";
     }
   ];
   

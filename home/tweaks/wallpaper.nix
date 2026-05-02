@@ -1,10 +1,10 @@
 { pkgs, config, ... }:
 {
   wallpapers = [
-    {
-      name = "mygo-watch-tv.png";
-      convertMethod = "gonord";
-    }
+    # {
+    #   name = "mygo-watch-tv.png";
+    #   convertMethod = "gonord";
+    # }
     {
       name = "frieren-butterflies.jpg";
       convertMethod = "lutgen";
@@ -30,10 +30,10 @@
       name = "anon-soyo.jpg";
       convertMethod = "gonord";
     }
-    {
-      name = "mygo-train.jpg";
-      convertMethod = "gonord";
-    }
+    # {
+    #   name = "mygo-train.jpg";
+    #   convertMethod = "gonord";
+    # }
     {
       name = "green-blue-flowers.jpg";
       convertMethod = "gonord";
@@ -53,10 +53,10 @@
       name = "morncolour-pink-landscape.png";
       convertMethod = "gonord";
     }
-    {
-      name = "jiaocha-girl-sea.jpg";
-      convertMethod = "gonord";
-    }
+    # {
+    #   name = "jiaocha-girl-sea.jpg";
+    #   convertMethod = "gonord";
+    # }
     {
       name = "muji-monochrome.jpg";
       convertMethod = "gonord";
@@ -65,18 +65,18 @@
       name = "zzzzoka-gbc.jpg";
       convertMethod = "gonord";
     }
-    {
-      name = "celestia-lunar.jpg";
-      convertMethod = "lutgen";
-    }
-    {
-      name = "kita.png";
-      convertMethod = "gonord";
-    }
-    {
-      name = "android-nautilus.jpg";
-      convertMethod = "gonord";
-    }
+    # {
+    #   name = "celestia-lunar.jpg";
+    #   convertMethod = "lutgen";
+    # }
+    # {
+    #   name = "kita.png";
+    #   convertMethod = "gonord";
+    # }
+    # {
+    #   name = "android-nautilus.jpg";
+    #   convertMethod = "gonord";
+    # }
     {
       name = "city.jpeg";
       convertMethod = "lutgen";
@@ -87,6 +87,18 @@
     }
     {
       name = "kyora-autumn.png";
+      convertMethod = "gonord";
+    }
+    {
+      name = "cartoon-rabbit.png";
+      convertMethod = "gonord";
+    }
+    {
+      name = "snow.png";
+      convertMethod = "lutgen";
+    }
+    {
+      name = "director.png";
       convertMethod = "gonord";
     }
   ];
