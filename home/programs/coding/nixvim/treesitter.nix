@@ -26,6 +26,7 @@
         "c"
         "cpp"
         "go"
+        "gomod"
       ];
       highlight.enable = true;
       indent.enable = true;

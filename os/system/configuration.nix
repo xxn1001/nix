@@ -110,6 +110,7 @@
       polkit
       polkit_gnome
       libguestfs-with-appliance
+      go
     ];
 
     variables = {
