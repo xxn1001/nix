@@ -7,5 +7,7 @@
     ./shell
     ./desktop
     ./utils
+    ./coding
+    ./documents
   ];
 }

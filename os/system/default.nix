@@ -6,6 +6,6 @@
     ./firewall.nix
     ./podman.nix
     ./virtualization.nix
-    # ./general_br.nix
+    ./general_br.nix
   ];
 }
