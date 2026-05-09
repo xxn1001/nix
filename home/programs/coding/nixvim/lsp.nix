@@ -65,6 +65,8 @@
             filetypes = [ "qml" ];
           };
           harper_ls.enable = true;
+          clangd.enable = true;
+          gopls.enable = true;
         };
       };
       conform-nvim = {
@@ -99,6 +101,12 @@
             yaml = [ "yamlfmt" ];
             python = [ "ruff" ];
             tex = [ "latexindent" ];
+            c = [ "clang-format" ];
+            cpp = [ "clang-format" ];
+            go = [
+              "goimports"
+              "gofmt"
+            ];
           };
           formatters = {
             injeced.lang_to_ext = {

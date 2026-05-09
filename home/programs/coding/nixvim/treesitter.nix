@@ -3,7 +3,7 @@
   programs.nixvim.plugins.treesitter = {
     enable = true;
     settings = {
-      auto_install = true;
+      auto_install = false;
       ensure_installed = [
         "diff"
         "bash"
@@ -22,7 +22,10 @@
         "glsl"
         "css"
         "hyprlang"
-        "r"
+        # "r"
+        "c"
+        "cpp"
+        "go"
       ];
       highlight.enable = true;
       indent.enable = true;
