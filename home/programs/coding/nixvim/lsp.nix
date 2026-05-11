@@ -65,7 +65,13 @@
             filetypes = [ "qml" ];
           };
           harper_ls.enable = true;
-          clangd.enable = true;
+          clangd = {
+            enable = true;
+            cmd = [
+              "clangd"
+              "--offset-encoding=utf-16"
+            ];
+          };
           gopls.enable = true;
         };
       };

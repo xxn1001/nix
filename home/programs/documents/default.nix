@@ -5,7 +5,7 @@
   ];
   home.packages = with pkgs; [
     libreoffice
-    onlyoffice-desktopeditors
+    # onlyoffice-desktopeditors
     evince
   ];
 }

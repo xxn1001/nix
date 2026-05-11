@@ -6,5 +6,6 @@
     # ./zed.nix
     ./nixvim
     ./go.nix
+    ./cpp.nix
   ];
 }

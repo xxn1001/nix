@@ -5,6 +5,7 @@
     settings = {
       border-size = 4;
       border-radius = 8;
+      default-timeout = 5000;
     };
   };
   stylix.targets.mako.enable = true;
