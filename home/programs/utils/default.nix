@@ -63,6 +63,7 @@
     ./screenshots.nix
     ./kubernetes.nix
     ./lazygit.nix
+    ./yazi
   ];
   programs.pay-respects.enable = true;
 }

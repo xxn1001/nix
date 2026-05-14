@@ -47,4 +47,8 @@
   home.packages = with pkgs; [
     mdcat
   ];
+
+  home.sessionVariables = {
+    TERMINAL = "kitty";
+  };
 }

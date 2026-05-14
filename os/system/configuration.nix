@@ -51,7 +51,7 @@
     blueman.enable = true;
 
     gvfs.enable = true;
- 
+
     openssh.enable = false;
 
     flatpak.enable = true;
@@ -123,7 +123,7 @@
     sessionVariables = {
       XMODIFIERS = "@im=fcitx";
       SDL_IM_MODULE = "fcitx";
-      GLFW_IM_MODULE = "ibus";
+      GLFW_IM_MODULE = "fcitx";
       QT_SCALE_FACTOR_ROUNDING_POLICY = "round";
       GSK_RENDERER = "vulkan";
       NIXOS_OZONE_WL = "1";

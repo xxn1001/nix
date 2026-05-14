@@ -16,9 +16,15 @@
     themes = {
       blur_theme = {
         inherits = "gruvbox";
-        "ui.background" = { bg = "none"; };
-        "ui.virtual.whitespace" = { fg = "none"; };
-        "ui.menu" = { bg = "none"; };
+        "ui.background" = {
+          bg = "none";
+        };
+        "ui.virtual.whitespace" = {
+          fg = "none";
+        };
+        "ui.menu" = {
+          bg = "none";
+        };
       };
     };
   };

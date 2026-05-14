@@ -35,7 +35,7 @@
             package = inputs.nixd.packages.${pkgs.stdenv.hostPlatform.system}.nixd;
             settings = {
               formatting.command = [ "nixfmt" ];
-              nixd.nixpkgs.expr = "import <nixpkgs> { }";
+              nixd.nixpkgs.expr = "import ${inputs.nixpkgs} { }";
               options =
                 let
                   flake = # nix
