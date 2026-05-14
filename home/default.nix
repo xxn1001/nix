@@ -35,33 +35,33 @@
       XDG_DATA_DIRS = "${config.home.homeDirectory}/.nix-profile/share:${config.home.homeDirectory}/.local/share:/run/current-system/sw/share:$XDG_DATA_DIRS";
     };
 
-  #   activation = {
-  #     niri-transition =
-  #       lib.hm.dag.entryAfter [ "writeBoundary" ]
-  #         # bash
-  #         ''
-  #           run ${pkgs.niri-unstable}/bin/niri msg action do-screen-transition
-  #         '';
-  #     reload-shell =
-  #       lib.hm.dag.entryAfter [ "niri-transition" ]
-  #         # bash
-  #         ''
-  #           # only run stop if the service is active
-  #           if ${pkgs.systemd}/bin/systemctl --user is-active waybar.service; then
-  #             run --silence ${pkgs.systemd}/bin/systemctl --user stop waybar.service
-  #           fi
-  #           if ${pkgs.systemd}/bin/systemctl --user is-active dms.service; then
-  #             run --silence ${pkgs.systemd}/bin/systemctl --user stop dms.service
-  #           fi
-  #           if ${pkgs.systemd}/bin/systemctl --user is-active caelestia.service; then
-  #             run --silence ${pkgs.systemd}/bin/systemctl --user stop caelestia.service
-  #           fi
-  #           if ${pkgs.systemd}/bin/systemctl --user is-active noctalia-shell.service; then
-  #             run --silence ${pkgs.systemd}/bin/systemctl --user stop noctalia-shell.service
-  #           fi
-  #           run --silence ${pkgs.systemd}/bin/systemctl --user start ${config.desktopShell}.service
-  #         '';
-  #   };
+    #   activation = {
+    #     niri-transition =
+    #       lib.hm.dag.entryAfter [ "writeBoundary" ]
+    #         # bash
+    #         ''
+    #           run ${pkgs.niri-unstable}/bin/niri msg action do-screen-transition
+    #         '';
+    #     reload-shell =
+    #       lib.hm.dag.entryAfter [ "niri-transition" ]
+    #         # bash
+    #         ''
+    #           # only run stop if the service is active
+    #           if ${pkgs.systemd}/bin/systemctl --user is-active waybar.service; then
+    #             run --silence ${pkgs.systemd}/bin/systemctl --user stop waybar.service
+    #           fi
+    #           if ${pkgs.systemd}/bin/systemctl --user is-active dms.service; then
+    #             run --silence ${pkgs.systemd}/bin/systemctl --user stop dms.service
+    #           fi
+    #           if ${pkgs.systemd}/bin/systemctl --user is-active caelestia.service; then
+    #             run --silence ${pkgs.systemd}/bin/systemctl --user stop caelestia.service
+    #           fi
+    #           if ${pkgs.systemd}/bin/systemctl --user is-active noctalia-shell.service; then
+    #             run --silence ${pkgs.systemd}/bin/systemctl --user stop noctalia-shell.service
+    #           fi
+    #           run --silence ${pkgs.systemd}/bin/systemctl --user start ${config.desktopShell}.service
+    #         '';
+    #   };
   };
 
   i18n.inputMethod = {
@@ -89,9 +89,9 @@
           name = "xxn1001";
           email = "davesovvv@gmail.com";
         };
-        safe = {
-          directory = "*";
-        };
+        # safe = {
+        #   directory = "*";
+        # };
       };
     };
 

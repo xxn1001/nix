@@ -49,16 +49,16 @@
                 };
             };
           };
-          nil_ls = {
-            enable = true;
-            package = inputs.nil.packages.${pkgs.stdenv.hostPlatform.system}.nil;
-            settings = {
-              # formatting.command = ["nixfmt"];
-              nix.flake = {
-                autoArchive = true;
-              };
-            };
-          };
+          # nil_ls = {
+          #   enable = true;
+          #   package = inputs.nil.packages.${pkgs.stdenv.hostPlatform.system}.nil;
+          #   settings = {
+          #     # formatting.command = ["nixfmt"];
+          #     nix.flake = {
+          #       autoArchive = true;
+          #     };
+          #   };
+          # };
           texlab.enable = true;
           qmlls = {
             enable = true;
@@ -115,7 +115,7 @@
             ];
           };
           formatters = {
-            injeced.lang_to_ext = {
+            injected.lang_to_ext = {
               lua = "lua";
             };
             shfmt.command = lib.getExe pkgs.shfmt;

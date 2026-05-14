@@ -9,8 +9,8 @@
         cd = "z";
       };
       shellAliases = {
-        "ls" = "exa";
-        "l" = "exa -lah --icons=auto";
+        "ls" = "eza";
+        "l" = "eza -lah --icons=auto";
       };
       shellInit = ''
         zoxide init fish | source

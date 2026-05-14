@@ -34,7 +34,7 @@
   fileSystems."/swap" =
     { device = "/dev/disk/by-uuid/249a00ab-0e6f-4675-ad17-19af47b7c2fa";
       fsType = "btrfs";
-      options = [ "subvol=@swap" ];
+      options = [ "subvol=@swap" "nodatacow" "noautodefrag" "compress=none" ];
     };
 
   fileSystems."/boot" =

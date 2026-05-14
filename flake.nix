@@ -79,20 +79,20 @@
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
     ghostty.url = "github:ghostty-org/ghostty";
     nixGL.url = "github:nix-community/nixGL";
-    quickshell = {
-      url = "git+https://git.outfoxxed.me/quickshell/quickshell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    dank-material-shell.url = "github:AvengeMedia/DankMaterialShell";
-    caelestia-shell = {
-      url = "github:caelestia-dots/shell";
-      inputs.quickshell.follows = "quickshell";
-    };
-    caelestia-cli.url = "github:caelestia-dots/cli";
-    noctalia-shell = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # quickshell = {
+    #   url = "git+https://git.outfoxxed.me/quickshell/quickshell";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # dank-material-shell.url = "github:AvengeMedia/DankMaterialShell";
+    # caelestia-shell = {
+    #   url = "github:caelestia-dots/shell";
+    #   inputs.quickshell.follows = "quickshell";
+    # };
+    # caelestia-cli.url = "github:caelestia-dots/cli";
+    # noctalia-shell = {
+    #   url = "github:noctalia-dev/noctalia-shell";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     hexecute.url = "github:ThatOtherAndrew/Hexecute";
     awww.url = "git+https://codeberg.org/LGFae/awww";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
