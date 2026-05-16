@@ -58,12 +58,12 @@
     ./eye-candy.nix
     ./obs.nix
     # ./music.nix
-    # ./ai.nix
     ./nautilus.nix
     ./screenshots.nix
     ./kubernetes.nix
     ./lazygit.nix
     ./yazi
+    ./zellij.nix
   ];
   programs.pay-respects.enable = true;
 }

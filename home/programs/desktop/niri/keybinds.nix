@@ -1,23 +1,45 @@
-{ config, lib, user, ... }:
+{
+  config,
+  lib,
+  user,
+  ...
+}:
 {
   programs.niri.settings = {
-    binds = with config.lib.niri.actions;
-    let mod = "Super";
-    in
-    {
-      "${mod}+T".action = spawn "kitty";
-      "${mod}+F".action = maximize-column;
-      "${mod}+Alt+F".action = fullscreen-window;
-      "${mod}+Q".action = close-window;
-      "${mod}+Z".action = spawn "tofi-drun" "--drun-launch=true";
-      "${mod}+X".action = spawn "/home/${user}/scripts/tofi/powermenu";
-      "${mod}+Shift+W".action = spawn "/home/${user}/scripts/change-wal-niri";
-      "${mod}+P".action = spawn [ "sh" "-c" "$(tofi-run)" ];
-      "${mod}+Shift+C".action = spawn "/home/${user}/scripts/tofi/colorscheme";
-      "${mod}+Shift+S".action = spawn "screenshot";
-      "${mod}+Shift+R".action = spawn "wl-color-picker";
-      # "${mod}+Tab".action = config.lib.niri.actions.next-window;
-      # "${mod}+Shift+Tab".action = config.lib.niri.actions.previous-window;
-    };
+    binds =
+      with config.lib.niri.actions;
+      let
+        mod = "Super";
+      in
+      {
+        "${mod}+T".action = spawn "kitty";
+        "${mod}+F".action = maximize-column;
+        "${mod}+Alt+F".action = fullscreen-window;
+        "${mod}+Q".action = close-window;
+        "${mod}+Z".action = spawn "tofi-drun" "--drun-launch=true";
+        "${mod}+X".action = spawn "/home/${user}/scripts/tofi/powermenu";
+        "${mod}+Shift+W".action = spawn "/home/${user}/scripts/change-wal-niri";
+        "${mod}+P".action = spawn [
+          "sh"
+          "-c"
+          "$(tofi-run)"
+        ];
+        "${mod}+Shift+C".action = spawn "/home/${user}/scripts/tofi/colorscheme";
+        "${mod}+Shift+S".action = spawn "screenshot";
+        "${mod}+Shift+R".action = spawn "wl-color-picker";
+        "${mod}+H".action = focus-column-left;
+        "${mod}+L".action = focus-column-right;
+        "${mod}+Ctrl+H".action = move-column-left;
+        "${mod}+Ctrl+L".action = move-column-right;
+        "${mod}+Ctrl+K".action = move-window-up;
+        "${mod}+Ctrl+J".action = move-window-down;
+        "${mod}+K".action = focus-window-up;
+        "${mod}+J".action = focus-window-down;
+        "${mod}+Y".action = focus-workspace-up;
+        "${mod}+N".action = focus-workspace-down;
+        "${mod}+Ctrl+Y".action = move-window-to-workspace-up;
+        "${mod}+Ctrl+N".action = move-window-to-workspace-down;
+        "${mod}+R".action = switch-preset-column-width; # 极为好用！在默认、预设宽度间循环
+      };
   };
 }

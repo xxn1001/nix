@@ -29,6 +29,7 @@
       passthru.providedSessions = [ "scroll" ];
     });
     inherit (inputs.awww.packages.${final.stdenv.hostPlatform.system}) awww;
+    zjstatus = inputs.zjstatus.packages.${prev.system}.default;
   };
 
   inherit (inputs.niri.overlays) niri;
