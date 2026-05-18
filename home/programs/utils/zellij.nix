@@ -15,6 +15,10 @@
 
   home.shellAliases = {
     zj = "zellij attach --create default";
+    zjd = "zellij delete-session";
+    zjc = "zellij attach --create";
+    zjda = "zellij delete-all-sessions";
+    zjl = "zellij list-sessions";
     zjn = "zellij --layout default";
   };
 

@@ -20,6 +20,7 @@
       poppler-utils
       p7zip
       libreoffice
+      zathura
     ];
 
     plugins = import ./plugins.nix { inherit pkgs; };

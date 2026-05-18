@@ -19,9 +19,17 @@
   opener = {
     edit = [
       {
-        run = "hx \"$@\"";
-        desc = "Helix";
+        run = "nvim \"$@\"";
+        desc = "Neovim";
         block = true;
+        for = "unix";
+      }
+    ];
+    pdf = [
+      {
+        run = "zathura \"$@\"";
+        desc = "Zathura";
+        orphan = true;
         for = "unix";
       }
     ];
@@ -70,6 +78,7 @@
       { name = "*.h"; use = "edit"; }
       { name = "*.cpp"; use = "edit"; }
       { name = "*.hpp"; use = "edit"; }
+      { mime = "application/pdf"; use = "pdf"; }
       { name = "*.docx"; use = "office"; }
       { name = "*.doc"; use = "office"; }
       { name = "*.pptx"; use = "office"; }

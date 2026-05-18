@@ -81,8 +81,11 @@
 
 ## 打开文件
 
-### 文本/代码 → Helix 编辑器
+### 文本/代码 → Neovim
 `*.nix` `*.lua` `*.toml` `*.json` `*.yaml` `*.yml` `*.md` `*.mdx` `*.txt` `*.rs` `*.py` `*.go` `*.hs` `*.c` `*.h` `*.cpp` `*.hpp`
+
+### PDF → Zathura
+`*.pdf`
 
 ### Office 文档 → LibreOffice
 `*.docx` `*.doc` `*.pptx` `*.ppt` `*.xlsx` `*.xls` `*.odt` `*.ods` `*.odp`
