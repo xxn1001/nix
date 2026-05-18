@@ -91,15 +91,15 @@
     }
     {
       name = "cartoon-rabbit.png";
-      convertMethod = "gonord";
+      convertMethod = "none";
     }
     {
       name = "snow.png";
-      convertMethod = "lutgen";
+      convertMethod = "none";
     }
     {
       name = "director.png";
-      convertMethod = "gonord";
+      convertMethod = "none";
     }
   ];
 }

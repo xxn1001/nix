@@ -95,12 +95,17 @@ let
     {
       inherit name live;
       path =
-        if lib.strings.hasPrefix baseImageName config.lib.stylix.colors.scheme then
+        if lib.strings.hasPrefix baseImageName config.lib.stylix.colors.scheme && convertMethod != "none" then
           path
         else if convertMethod == "gonord" then
           goNord thisWallpaper
         else if convertMethod == "lutgen" then
           lutgen thisWallpaper
+        else if convertMethod == "none" then
+          if live then path else
+            pkgs.runCommand "${name}.jpg" { } ''
+              ${pkgs.imagemagick}/bin/magick ${path} $out
+            ''
         else
           path;
     };
