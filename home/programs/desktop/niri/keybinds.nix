@@ -16,6 +16,7 @@
         "${mod}+F".action = maximize-column;
         "${mod}+Alt+F".action = fullscreen-window;
         "${mod}+Q".action = close-window;
+        "${mod}+Shift+Q".action = spawn "/home/${user}/scripts/niri-force-kill-window";
         "${mod}+Z".action = spawn "tofi-drun" "--drun-launch=true";
         "${mod}+X".action = spawn "/home/${user}/scripts/tofi/powermenu";
         "${mod}+Shift+W".action = spawn "/home/${user}/scripts/change-wal-niri";
@@ -26,6 +27,11 @@
         ];
         "${mod}+Shift+C".action = spawn "/home/${user}/scripts/tofi/colorscheme";
         "${mod}+Shift+S".action = spawn "screenshot";
+        "${mod}+V".action = spawn [
+          "sh"
+          "-c"
+          "cliphist list | tofi | cliphist decode | wl-copy"
+        ];
         "${mod}+Shift+R".action = spawn "wl-color-picker";
         "${mod}+H".action = focus-column-left;
         "${mod}+L".action = focus-column-right;

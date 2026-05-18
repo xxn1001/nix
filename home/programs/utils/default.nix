@@ -30,10 +30,9 @@
     # nom
     yad
     # pcmanfm
-    # yazi
+    xprop
     # ydotool
     jq
-    # scrcpy
     direnv
     entr
     lutgen
@@ -52,6 +51,7 @@
     podman-compose
     scrcpy
     android-tools
+    cliphist
   ];
   imports = [
     ./custom-scripts.nix

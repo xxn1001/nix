@@ -28,6 +28,8 @@ let
         # awww restore --namespace "background"
         # awww restore --namespace "backdrop"
         wlsunset -l 39.9 -L 116.4 -t 5000 -T 6500 &
+        wl-paste --type text --watch cliphist store &
+        wl-paste --type image --watch cliphist store &
         sleep 0.2
       ''
       + (
@@ -42,16 +44,16 @@ let
         |> builtins.concatStringsSep "\n"
       )
       + "\n";
-      # + (
-      #   if config.desktopShell == "caelestia" then
-      #     # bash
-      #     ''
-      #       caelestia wallpaper -f "/home/${user}/Pictures/Wallpapers/generated/$(cat ~/Pictures/Wallpapers/${config.lib.monitors.mainMonitorName}-file)"
-      #       caelestia scheme set -n dynamic -m dark
-      #     ''
-      #   else
-      #     ""
-      # );
+    # + (
+    #   if config.desktopShell == "caelestia" then
+    #     # bash
+    #     ''
+    #       caelestia wallpaper -f "/home/${user}/Pictures/Wallpapers/generated/$(cat ~/Pictures/Wallpapers/${config.lib.monitors.mainMonitorName}-file)"
+    #       caelestia scheme set -n dynamic -m dark
+    #     ''
+    #   else
+    #     ""
+    # );
   };
 in
 {
