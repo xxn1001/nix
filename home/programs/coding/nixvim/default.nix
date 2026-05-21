@@ -21,11 +21,6 @@
     defaultEditor = true;
     performance.combinePlugins = {
       enable = false;
-      standalonePlugins = [
-        # "copilot.lua"
-        # "nvim-treesitter"
-        "hmts.nvim"
-      ];
     };
     globals = {
       mapleader = " ";

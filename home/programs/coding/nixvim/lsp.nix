@@ -49,16 +49,6 @@
                 };
             };
           };
-          # nil_ls = {
-          #   enable = true;
-          #   package = inputs.nil.packages.${pkgs.stdenv.hostPlatform.system}.nil;
-          #   settings = {
-          #     # formatting.command = ["nixfmt"];
-          #     nix.flake = {
-          #       autoArchive = true;
-          #     };
-          #   };
-          # };
           texlab.enable = true;
           qmlls = {
             enable = true;
@@ -141,9 +131,7 @@
           };
         };
       };
-      lsp-format = {
-        enable = true;
-      };
+      lsp-format.enable = false;
       lspsaga = {
         enable = true;
         settings.lightbulb = {

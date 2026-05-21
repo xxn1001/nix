@@ -60,13 +60,6 @@
     };
     render-markdown = {
       enable = true;
-      settings = {
-        file_types = [
-          "markdown"
-          "codecompanion"
-        ];
-        latex.enabled = true;
-      };
     };
   };
   programs.nixvim.keymaps = [
