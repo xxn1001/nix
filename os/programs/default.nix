@@ -4,5 +4,6 @@
     ./basic.nix
     ./niri.nix
     ./tuigreet.nix
+    ./bubblewrap.nix
   ];
 }

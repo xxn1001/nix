@@ -37,12 +37,20 @@
           name = "LSP";
         }
         {
-          __unkeyed = "<Leader>m";
-          name = "Minimap";
+          __unkeyed = "<Leader>c";
+          name = "C/C++";
         }
         {
-          __unkeyed = "<Leader>c";
-          name = "CodeCompanion";
+          __unkeyed = "<Leader>g";
+          name = "Go";
+        }
+        {
+          __unkeyed = "<Leader>d";
+          name = "Debug";
+        }
+        {
+          __unkeyed = "<Leader>m";
+          name = "Minimap";
         }
         {
           __unkeyed = "<Leader>h";
@@ -52,10 +60,13 @@
     };
     render-markdown = {
       enable = true;
-      settings.file_types = [
-        "markdown"
-        "codecompanion"
-      ];
+      settings = {
+        file_types = [
+          "markdown"
+          "codecompanion"
+        ];
+        latex.enabled = true;
+      };
     };
   };
   programs.nixvim.keymaps = [
@@ -89,5 +100,18 @@
       local codewindow = require("codewindow")
       codewindow.setup()
       codewindow.apply_default_keybinds()
+
+      require("render-markdown").setup({
+        file_types = { "markdown", "codecompanion" },
+        latex = {
+          enabled = true,
+          converter = "latex2text",
+        },
+        win_options = {
+          conceallevel = {
+            rendered = 2,
+          },
+        },
+      })
     '';
 }

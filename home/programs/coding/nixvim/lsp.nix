@@ -70,9 +70,36 @@
             cmd = [
               "clangd"
               "--offset-encoding=utf-16"
+              "--background-index"
+              "--clang-tidy"
+              "--completion-style=detailed"
+              "--header-insertion=iwyu"
+              "--function-arg-placeholders=false"
             ];
           };
-          gopls.enable = true;
+          gopls = {
+            enable = true;
+            settings.gopls = {
+              gofumpt = true;
+              hints = {
+                assignVariableTypes = true;
+                compositeLiteralFields = true;
+                compositeLiteralTypes = true;
+                constantValues = true;
+                functionTypeParameters = true;
+                parameterNames = true;
+                rangeVariableTypes = true;
+              };
+              analyses = {
+                unusedparams = true;
+                unreachable = true;
+                unusedvariable = true;
+                ST1003 = true;
+              };
+              staticcheck = true;
+            };
+          };
+          cmake.enable = true;
         };
       };
       conform-nvim = {
@@ -96,34 +123,21 @@
             json = [ "prettier" ];
             jsonc = [ "prettier" ];
             lua = [ "stylua" ];
-            markdown = [
-              "prettier"
-              "injected"
-            ];
-            nix = [
-              "nixfmt"
-              "injected"
-            ];
+            markdown = [ "prettier" ];
+            nix = [ "nixfmt" ];
             yaml = [ "yamlfmt" ];
             python = [ "ruff" ];
-            tex = [ "latexindent" ];
             c = [ "clang-format" ];
             cpp = [ "clang-format" ];
-            go = [
-              "goimports"
-              "gofmt"
-            ];
+            go = [ "gofumpt" ];
           };
           formatters = {
-            injected.lang_to_ext = {
-              lua = "lua";
-            };
             shfmt.command = lib.getExe pkgs.shfmt;
             shellcheck.command = lib.getExe pkgs.shellcheck;
             shellharden.command = lib.getExe pkgs.shellharden;
             stylua.command = lib.getExe pkgs.stylua;
             yamlfmt.command = lib.getExe pkgs.yamlfmt;
-            latexindent.prepend_args = [ ''-y="defaultIndent='  '"'' ];
+            gofumpt.command = lib.getExe pkgs.gofumpt;
           };
         };
       };

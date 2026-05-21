@@ -17,6 +17,7 @@
         "toml"
         "vim"
         "markdown"
+        "markdown_inline"
         "rust"
         "jsonc"
         "glsl"
