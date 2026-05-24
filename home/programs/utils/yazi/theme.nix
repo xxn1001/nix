@@ -66,20 +66,20 @@
       { mime = "audio/*"; fg = "#f5c2e7"; }
       { mime = "application/x-bzip*"; fg = "#fab387"; }
       { mime = "application/x-compressed*"; fg = "#fab387"; }
-      { name = "*.zip"; fg = "#fab387"; }
-      { name = "*.tar*"; fg = "#fab387"; }
-      { name = "*.gz"; fg = "#fab387"; }
-      { name = "*.rar"; fg = "#fab387"; }
-      { name = "*.7z"; fg = "#fab387"; }
-      { name = "*.xz"; fg = "#fab387"; }
-      { name = "*.nix"; fg = "#89b4fa"; }
-      { name = "*.lua"; fg = "#89b4fa"; }
-      { name = "*.toml"; fg = "#f9e2af"; }
-      { name = "*.json"; fg = "#f9e2af"; }
-      { name = "*.yaml"; fg = "#f9e2af"; }
-      { name = "*.yml"; fg = "#f9e2af"; }
-      { name = "*.md"; fg = "#f9e2af"; }
-      { name = "*.mdx"; fg = "#f9e2af"; }
+      { url = "*.zip"; fg = "#fab387"; }
+      { url = "*.tar*"; fg = "#fab387"; }
+      { url = "*.gz"; fg = "#fab387"; }
+      { url = "*.rar"; fg = "#fab387"; }
+      { url = "*.7z"; fg = "#fab387"; }
+      { url = "*.xz"; fg = "#fab387"; }
+      { url = "*.nix"; fg = "#89b4fa"; }
+      { url = "*.lua"; fg = "#89b4fa"; }
+      { url = "*.toml"; fg = "#f9e2af"; }
+      { url = "*.json"; fg = "#f9e2af"; }
+      { url = "*.yaml"; fg = "#f9e2af"; }
+      { url = "*.yml"; fg = "#f9e2af"; }
+      { url = "*.md"; fg = "#f9e2af"; }
+      { url = "*.mdx"; fg = "#f9e2af"; }
       { mime = "text/*"; fg = "#cdd6f4"; }
     ];
   };

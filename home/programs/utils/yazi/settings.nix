@@ -19,7 +19,7 @@
   opener = {
     edit = [
       {
-        run = "nvim \"$@\"";
+        run = "nvim %s";
         desc = "Neovim";
         block = true;
         for = "unix";
@@ -27,7 +27,7 @@
     ];
     pdf = [
       {
-        run = "zathura \"$@\"";
+        run = "zathura %s";
         desc = "Zathura";
         orphan = true;
         for = "unix";
@@ -35,7 +35,7 @@
     ];
     office = [
       {
-        run = "libreoffice \"$@\"";
+        run = "libreoffice %s";
         desc = "LibreOffice";
         block = true;
         orphan = true;
@@ -44,7 +44,7 @@
     ];
     play = [
       {
-        run = "mpv \"$@\"";
+        run = "mpv %s";
         desc = "MPV";
         orphan = true;
         for = "unix";
@@ -52,7 +52,7 @@
     ];
     open = [
       {
-        run = "xdg-open \"$@\"";
+        run = "xdg-open %s";
         desc = "Open";
         for = "unix";
       }
@@ -61,33 +61,33 @@
 
   open = {
     prepend_rules = [
-      { name = "*.nix"; use = "edit"; }
-      { name = "*.lua"; use = "edit"; }
-      { name = "*.toml"; use = "edit"; }
-      { name = "*.json"; use = "edit"; }
-      { name = "*.yaml"; use = "edit"; }
-      { name = "*.yml"; use = "edit"; }
-      { name = "*.md"; use = "edit"; }
-      { name = "*.mdx"; use = "edit"; }
-      { name = "*.txt"; use = "edit"; }
-      { name = "*.rs"; use = "edit"; }
-      { name = "*.py"; use = "edit"; }
-      { name = "*.go"; use = "edit"; }
-      { name = "*.hs"; use = "edit"; }
-      { name = "*.c"; use = "edit"; }
-      { name = "*.h"; use = "edit"; }
-      { name = "*.cpp"; use = "edit"; }
-      { name = "*.hpp"; use = "edit"; }
+      { url = "*.nix"; use = "edit"; }
+      { url = "*.lua"; use = "edit"; }
+      { url = "*.toml"; use = "edit"; }
+      { url = "*.json"; use = "edit"; }
+      { url = "*.yaml"; use = "edit"; }
+      { url = "*.yml"; use = "edit"; }
+      { url = "*.md"; use = "edit"; }
+      { url = "*.mdx"; use = "edit"; }
+      { url = "*.txt"; use = "edit"; }
+      { url = "*.rs"; use = "edit"; }
+      { url = "*.py"; use = "edit"; }
+      { url = "*.go"; use = "edit"; }
+      { url = "*.hs"; use = "edit"; }
+      { url = "*.c"; use = "edit"; }
+      { url = "*.h"; use = "edit"; }
+      { url = "*.cpp"; use = "edit"; }
+      { url = "*.hpp"; use = "edit"; }
       { mime = "application/pdf"; use = "pdf"; }
-      { name = "*.docx"; use = "office"; }
-      { name = "*.doc"; use = "office"; }
-      { name = "*.pptx"; use = "office"; }
-      { name = "*.ppt"; use = "office"; }
-      { name = "*.xlsx"; use = "office"; }
-      { name = "*.xls"; use = "office"; }
-      { name = "*.odt"; use = "office"; }
-      { name = "*.ods"; use = "office"; }
-      { name = "*.odp"; use = "office"; }
+      { url = "*.docx"; use = "office"; }
+      { url = "*.doc"; use = "office"; }
+      { url = "*.pptx"; use = "office"; }
+      { url = "*.ppt"; use = "office"; }
+      { url = "*.xlsx"; use = "office"; }
+      { url = "*.xls"; use = "office"; }
+      { url = "*.odt"; use = "office"; }
+      { url = "*.ods"; use = "office"; }
+      { url = "*.odp"; use = "office"; }
     ];
   };
 
