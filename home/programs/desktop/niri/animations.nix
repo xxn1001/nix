@@ -26,7 +26,7 @@
       kind.spring = {
         damping-ratio = 0.8;
         stiffness = 600;
-        epsilon = 0.001;
+        epsilon = 0.005;
       };
     };
 

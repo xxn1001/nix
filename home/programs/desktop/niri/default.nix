@@ -1,11 +1,16 @@
-{ config, pkgs, user, lib, ... }:
+{
+  config,
+  pkgs,
+  user,
+  lib,
+  ...
+}:
 {
   imports = [
     ./animations.nix
-    ./waybar.nix
+    # ./waybar.nix
     ./autostart.nix
     ./keybinds.nix
-    # ./blur-daemon.nix
     ./override-config.nix
   ];
 
@@ -25,11 +30,11 @@
       {
         hotkey-overlay.skip-at-startup = true;
         prefer-no-csd = true;
-        
+
         # input = {
         #   focus-follows-mouse.enable = true;
         #   touchpad.natural-scroll = false;
-        #   keyboard.xkb.options = "caps:escape"; 
+        #   keyboard.xkb.options = "caps:escape";
         # };
 
         environment = {
@@ -58,8 +63,10 @@
           [
             {
               geometry-corner-radius = {
-                bottom-left = 10.0; bottom-right = 10.0;
-                top-left = 10.0; top-right = 10.0;
+                bottom-left = 10.0;
+                bottom-right = 10.0;
+                top-left = 10.0;
+                top-right = 10.0;
               };
               clip-to-geometry = true;
               draw-border-with-background = false;
@@ -71,14 +78,27 @@
             # 针对常用工具的比例优化，删除 MATLAB 后列表更干净
             {
               matches = matchAppIDs [
-                "firefox" "org.qutebrowser.qutebrowser" "kitty"
-                "evince" "zathura" "Zotero" "RStudio"
+                "firefox"
+                "org.qutebrowser.qutebrowser"
+                "kitty"
+                "evince"
+                "zathura"
+                "Zotero"
+                "RStudio"
               ];
-              default-column-width = { proportion = 0.95; };
+              default-column-width = {
+                proportion = 0.95;
+              };
             }
             # 焦点透明度设置
-            { matches = [ { is-focused = true; } ]; opacity = 0.92; }
-            { matches = [ { is-focused = false; } ]; opacity = 0.75; }
+            {
+              matches = [ { is-focused = true; } ];
+              opacity = 0.92;
+            }
+            {
+              matches = [ { is-focused = false; } ];
+              opacity = 0.75;
+            }
           ];
 
         layer-rules = [

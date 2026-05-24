@@ -81,6 +81,10 @@
     nixGL.url = "github:nix-community/nixGL";
     hexecute.url = "github:ThatOtherAndrew/Hexecute";
     awww.url = "git+https://codeberg.org/LGFae/awww";
+    noctalia-shell = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 }

@@ -22,9 +22,7 @@ let
     # inputs.agenix.homeManagerModules.default
     # ../secrets/age.nix
   
-    # inputs.dank-material-shell.homeModules.dank-material-shell
-    # inputs.caelestia-shell.homeManagerModules.default
-    # inputs.noctalia-shell.homeModules.default
+    inputs.noctalia-shell.homeModules.default
   ]
   ++ (builtins.attrValues self.homeManagerModules);
 

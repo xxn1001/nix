@@ -5,9 +5,7 @@
     ./mako.nix
     ./niri
     ./fonts.nix
-    # ./dms.nix
-    # ./caelestia.nix
-    # ./noctalia.nix
+    ./noctalia.nix
   ];
   home.packages = with pkgs; [
     awww

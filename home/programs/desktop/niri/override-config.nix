@@ -5,7 +5,7 @@ let
     # kdl
     ''
       blur {
-          passes 3
+          passes 1
           offset 3
           noise 0.02
           saturation 1.5
@@ -28,6 +28,13 @@ let
           background-effect {
               xray false
               blur true
+          }
+      }
+      layer-rule {
+          match namespace="^noctalia-(background|launcher-overlay|dock)-.*$"
+          background-effect {
+              xray true
+              blur false
           }
       }
 

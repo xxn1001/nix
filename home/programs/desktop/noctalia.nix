@@ -1,0 +1,207 @@
+{
+  config,
+  lib,
+  user,
+  inputs,
+  pkgs,
+  ...
+}:
+let
+  noctaliaPackage = inputs.noctalia-shell.packages.${pkgs.stdenv.hostPlatform.system}.default;
+in
+{
+  programs.noctalia-shell = {
+    enable = true;
+    colors = with config.lib.stylix.colors.withHashtag; {
+      mError = base08;
+      mHover = base0E;
+      mOnError = base00;
+      mOnHover = base00;
+      mOnPrimary = base00;
+      mOnSecondary = base01;
+      mOnSurface = base05;
+      mOnSurfaceVariant = base07;
+      mOnTeritiary = base00;
+      mOutline = base02;
+      mPrimary = base0B;
+      mSecondary = base0A;
+      mShadow = "#000000";
+      mSurface = base01;
+      mSurfaceVariant = base01;
+      mTeritiary = base0C;
+    };
+    settings = {
+      setupCompleted = true;
+      bar = {
+        density = "comfortable";
+        floating = true;
+        showCapsule = true;
+        outerCorners = true;
+        marginVertical = 6;
+        marginHorizontal = 6;
+        widgets = {
+          center = [
+            {
+              id = "SystemMonitor";
+              showCpuTemp = true;
+              showCpuUsage = true;
+              showDiskUsage = false;
+              showMemoryAsPercent = false;
+              showMemoryUsage = true;
+              showNetworkoStats = false;
+              usePrimaryColor = true;
+            }
+          ];
+          left = [
+            {
+              id = "Workspace";
+              labelMode = "none";
+              hideUnoccupied = false;
+            }
+          ];
+          right = [
+            {
+              id = "Tray";
+              drawerEnabled = false;
+              colorizeIcons = false;
+              blacklist = [ ];
+            }
+            {
+              id = "Volume";
+              displayMode = "onhover";
+            }
+            {
+              id = "Battery";
+              displayMode = "alwaysShow";
+              warningThreshold = 30;
+            }
+            {
+              id = "Clock";
+              customFont = "Monofur Nerd Font Mono";
+              formatHorizontal = "HH:mm ddd, MMM dd";
+              formatVertical = "HH mm - dd MM";
+              useCustomFont = true;
+              usePrimaryColor = true;
+            }
+            {
+              id = "ControlCenter";
+              useDistroLogo = false;
+            }
+          ];
+        };
+      };
+      controlCenter.cards = [
+        {
+          enabled = true;
+          id = "profile-card";
+        }
+        {
+          enabled = true;
+          id = "shortcuts-card";
+        }
+        {
+          enabled = true;
+          id = "audio-card";
+        }
+        {
+          enabled = true;
+          id = "brightness-card";
+        }
+        {
+          enabled = true;
+          id = "weather-card";
+        }
+        {
+          enabled = true;
+          id = "media-sysmon-card";
+        }
+      ];
+      idle = {
+        enabled = true;
+        screenOffTimeout = 500;
+        lockTimeout = 560;
+        suspendTimeout = 1800;
+        fadeDuration = 10;
+      };
+      colorSchemes = {
+        generateTemplatesForPredefined = false;
+        useWallpaperColors = false;
+      };
+      general = {
+        avatarImage = "/home/${user}/.face";
+        forceBlackScreenCorners = false;
+        showScreenCorners = false;
+      };
+      location = {
+        name = "北京";
+      };
+      ui = {
+        fontDefault = config.stylix.fonts.sansSerif.name;
+        fontFixed = config.stylix.fonts.monospace.name;
+        panelBackgroundOpacity = 0.85;
+      };
+      dock.enabled = false;
+      wallpaper.enabled = true;
+      nightLight = {
+        enabled = true;
+        forced = false;
+        nightTemp = "5000";
+      };
+      desktopWidgets = {
+        editMode = false;
+        enabled = true;
+        monitorWidgets = [
+          {
+            name = config.lib.monitors.mainMonitorName;
+            widgets = [
+              {
+                id = "Clock";
+                showBackground = true;
+                x = 80;
+                y = 100;
+              }
+              {
+                id = "Weather";
+                showBackground = true;
+                x = 80;
+                y = 300;
+              }
+            ];
+          }
+        ];
+      };
+    };
+  };
+
+  systemd.user.services.noctalia-shell =
+    let
+      noctaliaConfig = "/home/${user}/.config/noctalia/gui-settings.json";
+    in
+    {
+      Unit = {
+        After = [ "graphical-session.target" ];
+        PartOf = [ "graphical-session.target" ];
+        StartLimitIntervalSec = 60;
+        StartLimitBurst = 3;
+        X-Restart-Triggers = [
+          noctaliaPackage
+          noctaliaConfig
+        ];
+      };
+      Install.WantedBy = [ "graphical-session.target" ];
+      Service = {
+        ExecStart = "${noctaliaPackage}/bin/noctalia-shell";
+        Restart = "on-failure";
+        RestartSec = 3;
+        TimeoutStartSec = 10;
+        TimeoutStopSec = 5;
+        Environment = [
+          "NOCTALIA_SETTINGS_FALLBACK=${noctaliaConfig}"
+        ];
+      };
+    };
+
+  home.packages = [
+    noctaliaPackage
+  ];
+}

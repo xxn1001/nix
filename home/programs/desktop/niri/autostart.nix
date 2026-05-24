@@ -23,10 +23,8 @@ let
         dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
         sleep 0.5 &
         awww kill
-        awww-daemon --namespace "background" &
         awww-daemon --namespace "backdrop" &
-        # awww restore --namespace "background"
-        # awww restore --namespace "backdrop"
+        awww restore --namespace "backdrop"
         wlsunset -l 39.9 -L 116.4 -t 5000 -T 6500 &
         wl-paste --type text --watch cliphist store &
         wl-paste --type image --watch cliphist store &
@@ -35,8 +33,6 @@ let
       + (
         builtins.attrNames config.monitors
         |> map (monitor: [
-          "awww img --namespace background -o ${monitor} \"/home/${user}/Pictures/Wallpapers/generated/$(cat ~/Pictures/Wallpapers/${monitor}-file)\""
-          "sleep 0.2"
           "awww img --namespace backdrop -o ${monitor} \"/home/${user}/Pictures/Wallpapers/generated/$(cat ~/Pictures/Wallpapers/${monitor}-blurred-file)\""
           "sleep 0.2"
         ])
