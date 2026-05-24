@@ -8,13 +8,10 @@
     ./noctalia.nix
   ];
   home.packages = with pkgs; [
-    awww
-    swaybg
     kanshi
     wlsunset
     xwayland-satellite
     wmname
-    # inputs.hexecute.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
   home.file."scripts" = {
     source = ./scripts;

@@ -1,11 +1,11 @@
-{ pkgs, config, lib, user, ... }:
+{ config, lib, ... }:
 with config.lib.stylix.colors.withHashtag;
 let
   extraConfig =
     # kdl
     ''
       blur {
-          passes 1
+          passes 3
           offset 3
           noise 0.02
           saturation 1.5

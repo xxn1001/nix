@@ -86,7 +86,7 @@
   users.users.${user} = {
     shell = pkgs.fish;
     isNormalUser = true;
-    description = "Eden Lee";
+    description = "Sov";
     extraGroups = [
       "networkmanager"
       "wheel"
