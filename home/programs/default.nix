@@ -1,7 +1,7 @@
 {
   imports = [
     ./helix.nix
-    ./vscode.nix
+    ./vscodium
     ./browser.nix
     ./terminal
     ./shell
