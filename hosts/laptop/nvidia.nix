@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   hardware.graphics = {
     enable = true;
@@ -12,7 +17,7 @@
     modesetting.enable = true;
     powerManagement.enable = true;
     powerManagement.finegrained = false;
-    open = true;
+    open = false;
     nvidiaSettings = true;
     prime = {
       sync.enable = true;
@@ -20,6 +25,10 @@
       amdgpuBusId = "PCI:6:0:0";
     };
   };
+
+  systemd.tmpfiles.rules = [
+    "w /sys/power/image_size - - - - 0"
+  ];
   # boot.initrd.kernelModules = [ "vfio_pci" "vfio" "vfio_iommu_type1" ];
   # powerManagement.cpuFreqGovernor = "powersave";
   # services.tlp.enable = true;
@@ -54,4 +63,3 @@
   # '';
   # boot.blacklistedKernelModules = [ "amdgpu" "radeon" ];
 }
-  
