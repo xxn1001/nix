@@ -57,8 +57,8 @@
     ./custom-scripts.nix
     ./eye-candy.nix
     ./obs.nix
-    # ./music.nix
-    ./nautilus.nix
+    ./music.nix
+    ./thunar.nix
     ./screenshots.nix
     ./kubernetes.nix
     ./lazygit.nix

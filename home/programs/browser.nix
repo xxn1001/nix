@@ -12,8 +12,9 @@
         "browser.startup.homepage" = "about:blank";
         "browser.newtabpage.enabled" = false;
         "privacy.trackingprotection.enabled" = true;
-        # 如果你使用 Wayland，强制开启硬件加速
         "media.ffmpeg.vaapi.enabled" = true;
+        "ui.systemUsesDarkTheme" = 0;
+        "layout.css.prefers-color-scheme.content" = 0;
       };
     };
   };

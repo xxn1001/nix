@@ -35,7 +35,7 @@
     ];
     office = [
       {
-        run = "libreoffice %s";
+        run = "libreoffice %s 2>/dev/null";
         desc = "LibreOffice";
         block = true;
         orphan = true;
