@@ -5,27 +5,9 @@
     settings = {
       auto_install = false;
       ensure_installed = [
-        "diff"
-        "bash"
-        "fish"
-        "python"
-        "yaml"
-        "lua"
-        "json"
-        "nix"
-        "regex"
-        "toml"
-        "vim"
-        "markdown"
-        "markdown_inline"
-        "jsonc"
-        "glsl"
-        "css"
-        "hyprlang"
-        "c"
-        "cpp"
-        "go"
-        "gomod"
+        "diff" "bash" "fish" "python" "yaml" "lua" "json" "nix"
+        "regex" "toml" "vim" "markdown" "markdown_inline" "jsonc"
+        "glsl" "css" "hyprlang" "c" "cpp" "go" "gomod"
       ];
       highlight.enable = true;
       indent.enable = true;

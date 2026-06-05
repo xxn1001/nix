@@ -2,10 +2,10 @@
   imports = [
     ./misc.nix
     ./tex.nix
-    # ./neovide.nix
-    # ./zed.nix
-    ./nixvim
+    ./lsp.nix
     ./go.nix
     ./cpp.nix
+    ./nixvim
+    ./helix
   ];
 }

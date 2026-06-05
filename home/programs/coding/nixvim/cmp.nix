@@ -15,16 +15,7 @@
         "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
         "<CR>" = "cmp.mapping.confirm({ select = true })";
       };
-      settings.window.completion.border = [
-        "╭"
-        "─"
-        "╮"
-        "│"
-        "╯"
-        "─"
-        "╰"
-        "│"
-      ];
+      settings.window.completion.border = [ "╭" "─" "╮" "│" "╯" "─" "╰" "│" ];
     };
     plugins.cmp-buffer.enable = true;
     plugins.cmp-path.enable = true;

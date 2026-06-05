@@ -1,21 +1,21 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   programs.helix = {
     enable = true;
     settings = {
-      theme = "blur_theme";
+      theme = "everforest_transparent";
       editor = {
         line-number = "relative";
         cursor-shape = {
           insert = "bar";
           normal = "block";
         };
+        lsp.display-inlay-hints = true;
       };
     };
-
     themes = {
-      blur_theme = {
-        inherits = "gruvbox";
+      everforest_transparent = {
+        inherits = "everforest_dark";
         "ui.background" = {
           bg = "none";
         };
@@ -23,6 +23,15 @@
           fg = "none";
         };
         "ui.menu" = {
+          bg = "none";
+        };
+        "ui.statusline" = {
+          bg = "none";
+        };
+        "ui.popup" = {
+          bg = "none";
+        };
+        "ui.window" = {
           bg = "none";
         };
       };

@@ -1,6 +1,5 @@
 {
   imports = [
-    ./helix.nix
     ./vscodium
     ./browser.nix
     ./terminal
