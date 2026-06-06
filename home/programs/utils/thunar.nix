@@ -1,12 +1,14 @@
-{ pkgs, config, ... }:
-
 {
+  pkgs,
+  config,
+  ...
+}: {
   home.packages = with pkgs; [
     thunar
     thunar-archive-plugin
     thunar-volman
     thunar-media-tags-plugin
-    xfce.xfconf
+    xfconf
     tumbler
     ffmpegthumbnailer
     poppler-utils
@@ -21,8 +23,8 @@
     genericName = "File Manager";
     exec = "thunar %U";
     icon = "org.xfce.thunar";
-    categories = [ "System" "FileManager" ];
-    mimeType = [ "inode/directory" ];
+    categories = ["System" "FileManager"];
+    mimeType = ["inode/directory"];
     terminal = false;
   };
 }
