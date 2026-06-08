@@ -3,8 +3,7 @@
   config,
   inputs,
   ...
-}:
-{
+}: {
   home.packages = with pkgs; [
     tty-clock
     zoxide
@@ -52,6 +51,14 @@
     scrcpy
     android-tools
     cliphist
+    file-roller
+    file
+    patchelf
+  ];
+
+  xdg.mimeApps.defaultApplicationPackages = with pkgs; [
+    loupe
+    file-roller
   ];
   imports = [
     ./custom-scripts.nix

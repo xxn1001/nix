@@ -1,11 +1,6 @@
+{ pkgs, ... }:
 {
-  programs.nixvim.plugins.harpoon2 = {
-    enable = true;
-    settings = {
-      save_on_toggle = true;
-      save_on_change = true;
-    };
-  };
+  programs.nixvim.extraPlugins = with pkgs.vimPlugins; [ harpoon2 ];
   programs.nixvim.keymaps = [
     {
       key = "<leader>ma";

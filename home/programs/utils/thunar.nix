@@ -14,8 +14,9 @@
     poppler-utils
   ];
 
-  xdg.mimeApps.defaultApplications = {
-    "inode/directory" = "thunar.desktop";
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplicationPackages = [ pkgs.thunar ];
   };
 
   xdg.desktopEntries.thunar = {
@@ -24,7 +25,6 @@
     exec = "thunar %U";
     icon = "org.xfce.thunar";
     categories = ["System" "FileManager"];
-    mimeType = ["inode/directory"];
     terminal = false;
   };
 }
