@@ -8,5 +8,6 @@
     ./rust.nix
     ./nixvim
     ./helix
+    ./python.nix
   ];
 }

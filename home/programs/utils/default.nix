@@ -54,6 +54,7 @@
     file-roller
     file
     patchelf
+    pkg-config
   ];
 
   xdg.mimeApps.defaultApplicationPackages = with pkgs; [

@@ -5,13 +5,10 @@
   host,
   user,
   ...
-}:
-let
+}: let
   nixd = inputs.nixd.packages.${pkgs.stdenv.hostPlatform.system}.nixd;
-in
-{
+in {
   home.packages = with pkgs; [
-    python3
     # Python
     ruff
     pyright

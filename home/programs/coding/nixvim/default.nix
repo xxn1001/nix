@@ -17,7 +17,6 @@
     ./flash.nix
     ./ui.nix
     ./mini.nix
-    ./dap.nix
     ./noice.nix
     ./neo-tree.nix
     ./dashboard.nix
@@ -76,8 +75,6 @@
     };
     keymaps = [
       { mode = "n"; key = "<Leader>ch"; action = "<cmd>lua ToggleHeader()<CR>"; }
-      { mode = "n"; key = "<Leader>cb"; action = "<cmd>!g++ -std=c++20 -Wall -O2 -o %:r %<CR>"; }
-      { mode = "n"; key = "<Leader>cr"; action = "<cmd>!g++ -std=c++20 -Wall -O2 -o %:r % && ./%:r<CR>"; }
       { mode = "n"; key = "<Leader>gb"; action = "<cmd>!go build ./...<CR>"; }
       { mode = "n"; key = "<Leader>gt"; action = "<cmd>!go test -v ./...<CR>"; }
       { mode = "n"; key = "<Leader>gr"; action = "<cmd>!go run .<CR>"; }
@@ -121,6 +118,12 @@
         end
       end
       _G.ToggleHeader = M.toggle_header
+
+      function _G.ToggleDiagnostics()
+        local enabled = vim.diagnostic.is_enabled()
+        vim.diagnostic.enable(not enabled)
+        vim.notify(enabled and "诊断已关闭" or "诊断已开启", vim.log.levels.INFO)
+      end
     '';
   };
 }

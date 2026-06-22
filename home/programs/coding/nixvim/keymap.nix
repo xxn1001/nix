@@ -167,5 +167,19 @@
       action = "<CMD>Telescope help_tags theme=ivy layout_config={height=0.4}<CR>";
       options = { silent = true; desc = "帮助查询"; };
     }
+
+    # --- 切换 ---
+    {
+      mode = "n";
+      key = "<leader>ss";
+      action = "<cmd>set spell!<cr>";
+      options = { silent = true; desc = "切换拼写检查"; };
+    }
+    {
+      mode = "n";
+      key = "<leader>sd";
+      action = "<cmd>lua ToggleDiagnostics()<CR>";
+      options = { silent = true; desc = "切换语法诊断"; };
+    }
   ];
 }

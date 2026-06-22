@@ -31,8 +31,6 @@ home/programs/coding/nixvim/
 ├── aerial.nix           # 代码大纲
 ├── trouble.nix          # 诊断/引用面板
 ├── todo-comments.nix    # TODO/FIXME 高亮
-│
-├── dap.nix              # 调试器（codelldb、delve、pwa-node）
 ├── harpoon.nix          # 文件快捷跳转
 ├── toggleterm.nix       # 内嵌终端
 ├── persistence.nix      # 会话恢复
@@ -99,8 +97,6 @@ Telescope 内快捷键：
 | 快捷键 | 功能 |
 |--------|------|
 | `<leader>ch` | C/C++ header ↔ source 切换 |
-| `<leader>cb` | g++ 编译当前文件 |
-| `<leader>cr` | g++ 编译并运行 |
 | `gD` | 跳转到声明 |
 | `gd` | 跳转到定义 |
 | `gr` | 查找引用 |
@@ -128,20 +124,6 @@ Telescope 内快捷键：
 | `<leader>gb` | go build ./... |
 | `<leader>gt` | go test -v ./... |
 | `<leader>gr` | go run . |
-
-### 调试 `<leader>d`
-
-| 快捷键 | 功能 |
-|--------|------|
-| `<F5>` | 继续执行 |
-| `<F9>` | 切换断点 |
-| `<F10>` | 单步跳过 |
-| `<F11>` | 单步进入 |
-| `<F12>` | 单步退出 |
-| `<leader>du` | 切换调试 UI |
-| `<leader>dt` | 切换 REPL |
-
-支持语言：C/C++/Rust (codelldb)、Go (delve)、JavaScript/TypeScript (pwa-node)。
 
 ### Git
 
@@ -275,15 +257,11 @@ Telescope 内快捷键：
 ```
 1. <leader>ff         → 打开项目文件
 2. 编辑代码，LSP 自动补全（Tab 选择）
-3. <leader>cb         → g++ 编译
-4. <leader>cr         → 编译并运行
-5. <leader>ch         → 在 .cpp 和 .h 之间切换
-6. gd                 → 跳转到函数定义
-7. <leader>cR         → 重命名符号
-8. <leader>ca         → Quick Fix（如添加 #include）
-9. <F9>               → 设置断点
-10. <F5>              → 开始调试
-11. <leader>du        → 打开调试面板
+3. <leader>ch         → 在 .cpp 和 .h 之间切换
+4. gd                 → 跳转到函数定义
+5. <leader>cR         → 重命名符号
+6. <leader>ca         → Quick Fix（如添加 #include）
+7. <leader>tt         → 打开终端，手动 g++ 编译调试
 ```
 
 ### 场景 2：浏览大型项目
