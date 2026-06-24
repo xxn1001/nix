@@ -6,5 +6,5 @@
     ./stylix.nix
     ./colorscheme.nix
   ];
-  # desktopShell = "noctalia-shell";
+  # desktopShell = "noctalia";
 }

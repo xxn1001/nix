@@ -10,212 +10,155 @@ let
   noctaliaPackage = inputs.noctalia-shell.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in
 {
-  programs.noctalia-shell = {
+  programs.noctalia = {
     enable = true;
-    colors = with config.lib.stylix.colors.withHashtag; {
-      mError = base08;
-      mHover = base0E;
-      mOnError = base00;
-      mOnHover = base00;
+    systemd.enable = true;
+    customPalettes.stylix.dark = with config.lib.stylix.colors.withHashtag; {
+      mPrimary = base0E;
       mOnPrimary = base00;
-      mOnSecondary = base01;
+      mSecondary = base08;
+      mOnSecondary = base00;
+      mTertiary = base0C;
+      mOnTertiary = base00;
+      mError = base08;
+      mOnError = base00;
+      mSurface = base00;
       mOnSurface = base05;
-      mOnSurfaceVariant = base07;
-      mOnTeritiary = base00;
-      mOutline = base02;
-      mPrimary = base0B;
-      mSecondary = base0A;
-      mShadow = "#000000";
-      mSurface = base01;
+      mHover = base0D;
+      mOnHover = base00;
       mSurfaceVariant = base01;
-      mTeritiary = base0C;
-    };
-    settings = {
-      setupCompleted = true;
-      bar = {
-        density = "comfortable";
-        floating = true;
-        showCapsule = true;
-        outerCorners = true;
-        marginVertical = 6;
-        marginHorizontal = 6;
-        widgets = {
-          center = [
-            {
-              id = "SystemMonitor";
-              showCpuTemp = true;
-              showCpuUsage = true;
-              showDiskUsage = false;
-              showMemoryAsPercent = false;
-              showMemoryUsage = true;
-              showNetworkoStats = false;
-              usePrimaryColor = true;
-            }
-          ];
-          left = [
-            {
-              id = "Workspace";
-              labelMode = "none";
-              hideUnoccupied = false;
-            }
-          ];
-          right = [
-            {
-              id = "Tray";
-              drawerEnabled = false;
-              colorizeIcons = false;
-              blacklist = [ ];
-            }
-            {
-              id = "Volume";
-              displayMode = "onhover";
-            }
-            {
-              id = "Battery";
-              displayMode = "alwaysShow";
-              warningThreshold = 30;
-            }
-            {
-              id = "Clock";
-              customFont = "Monofur Nerd Font Mono";
-              formatHorizontal = "HH:mm ddd, MMM dd";
-              formatVertical = "HH mm - dd MM";
-              useCustomFont = true;
-              usePrimaryColor = true;
-            }
-            {
-              id = "ControlCenter";
-              useDistroLogo = false;
-            }
-          ];
+      mOnSurfaceVariant = base04;
+      mOutline = base03;
+      mShadow = base00;
+
+      terminal = {
+        foreground = base05;
+        background = base00;
+        cursor = base05;
+        cursorText = base00;
+        selectionFg = base05;
+        selectionBg = base02;
+        normal = {
+          black = base00;
+          red = base08;
+          green = base0B;
+          yellow = base0A;
+          blue = base0D;
+          magenta = base0E;
+          cyan = base0C;
+          white = base05;
+        };
+        bright = {
+          black = base03;
+          red = base08;
+          green = base0B;
+          yellow = base0A;
+          blue = base0D;
+          magenta = base0E;
+          cyan = base0C;
+          white = base07;
         };
       };
-      controlCenter.cards = [
-        {
-          enabled = true;
-          id = "profile-card";
-        }
-        {
-          enabled = true;
-          id = "shortcuts-card";
-        }
-        {
-          enabled = true;
-          id = "audio-card";
-        }
-        {
-          enabled = true;
-          id = "brightness-card";
-        }
-        {
-          enabled = true;
-          id = "weather-card";
-        }
-        {
-          enabled = true;
-          id = "media-sysmon-card";
-        }
-      ];
-      idle = {
-        enabled = true;
-        screenOffTimeout = 500;
-        lockTimeout = 560;
-        suspendTimeout = 1800;
-        fadeDuration = 10;
+    };
+
+    settings = {
+      shell = {
+        avatar_path = "/home/${user}/.face";
+        font_family = config.stylix.fonts.sansSerif.name;
+        panel = {
+          transparency_mode = "glass";
+        };
       };
-      colorSchemes = {
-        generateTemplatesForPredefined = false;
-        useWallpaperColors = false;
-      };
-      general = {
-        avatarImage = "/home/${user}/.face";
-        forceBlackScreenCorners = false;
-        showScreenCorners = false;
-      };
-      location = {
-        name = "北京";
-      };
-      ui = {
-        fontDefault = config.stylix.fonts.sansSerif.name;
-        fontFixed = config.stylix.fonts.monospace.name;
-        panelBackgroundOpacity = 0.85;
-      };
-      dock.enabled = false;
-      wallpaper.enabled = true;
-      nightLight = {
-        enabled = true;
-        forced = false;
-        nightTemp = "5000";
-      };
-      desktopWidgets = {
-        editMode = false;
-        enabled = true;
-        monitorWidgets = [
-          {
-            name = config.lib.monitors.mainMonitorName;
-            widgets = [
-              {
-                id = "Clock";
-                showBackground = true;
-                x = 80;
-                y = 100;
-              }
-              {
-                id = "Weather";
-                showBackground = true;
-                x = 80;
-                y = 300;
-              }
-            ];
-          }
+
+      bar.main = {
+        capsule = true;
+        background_opacity = 0.85;
+        margin_h = 6;
+        margin_v = 6;
+        start = [ "workspaces" ];
+        center = [
+          "cpu"
+          "temp"
+          "ram"
         ];
+        end = [
+          "tray"
+          "volume"
+          "battery"
+          "clock"
+          "control-center"
+        ];
+      };
+
+      widget = {
+        workspaces = {
+          display = "none";
+          hide_when_empty = false;
+        };
+        clock = {
+          format = "{:%H:%M %a, %b %d}";
+          vertical_format = "{:%H:%M}";
+          font_family = config.stylix.fonts.monospace.name;
+        };
+        battery = {
+          hide_when_full = false;
+          hide_when_plugged = false;
+        };
+      };
+
+      battery.warning_threshold = 30;
+
+      nightlight = {
+        enabled = true;
+        force = false;
+        temperature_night = 5000;
+      };
+
+      location.address = "北京";
+
+      wallpaper.enabled = true;
+
+      dock.enabled = false;
+
+      theme = {
+        source = "builtin";
+        templates.enable_builtin_templates = false;
+      };
+
+      weather.enabled = true;
+
+      idle = {
+        pre_action_fade_seconds = 10;
+        behavior = {
+          lock = {
+            enabled = true;
+            timeout = 560;
+            action = "lock";
+          };
+          screen-off = {
+            enabled = true;
+            timeout = 500;
+            action = "screen_off";
+          };
+        };
       };
     };
   };
 
-  systemd.user.services.noctalia-shell =
-    let
-      noctaliaConfig = "/home/${user}/.config/noctalia/settings.json";
-    in
-    {
-      Unit = {
-        After = [ "graphical-session.target" ];
-        PartOf = [ "graphical-session.target" ];
-        StartLimitIntervalSec = 60;
-        StartLimitBurst = 3;
-        X-Restart-Triggers = [
-          noctaliaPackage
-          noctaliaConfig
-        ];
-      };
-      Install.WantedBy = [ "graphical-session.target" ];
-      Service = {
-        ExecStart = "${noctaliaPackage}/bin/noctalia-shell";
-        Restart = "on-failure";
-        RestartSec = 3;
-        TimeoutStartSec = 10;
-        TimeoutStopSec = 5;
-        Environment = [
-          "NOCTALIA_SETTINGS_FALLBACK=${noctaliaConfig}"
-        ];
-      };
-    };
-
   systemd.user.services.noctalia-blur-sync =
     let
+      noctaliaBin = "${noctaliaPackage}/bin/noctalia";
       blurSync = pkgs.writeShellApplication {
         name = "noctalia-blur-sync";
         runtimeInputs = with pkgs; [
           imagemagick
           awww
-          jq
           niri
         ];
         bashOptions = [ ];
         extraShellCheckFlags = [ ];
         text = ''
           USER_HOME="''${HOME}"
-          WALLPAPERS_JSON="$USER_HOME/.cache/noctalia/wallpapers.json"
           BLUR_DIR="$USER_HOME/Pictures/.cache/blurred"
           NAMESPACE="backdrop"
           POLL_INTERVAL=5
@@ -229,10 +172,8 @@ in
               niri msg outputs 2>/dev/null | sed -n '1s/.*(\([^)]*\)).*/\1/p'
           }
 
-          get_current_wallpapers() {
-              if [ -f "$WALLPAPERS_JSON" ]; then
-                  jq -r '.wallpapers // {} | to_entries[].value | .dark, .light' "$WALLPAPERS_JSON" 2>/dev/null | sort -u
-              fi
+          get_current_wallpaper() {
+              ${noctaliaBin} msg wallpaper-get 2>/dev/null
           }
 
           init_awww() {
@@ -246,43 +187,43 @@ in
               fi
           }
 
-          sync_once() {
-              get_current_wallpapers | while IFS= read -r wp; do
-                  [ -z "$wp" ] && continue
-                  [ ! -f "$wp" ] && continue
+          sync_blur() {
+              local wp
+              wp="$(get_current_wallpaper)"
+              [ -z "$wp" ] && return
+              [ ! -f "$wp" ] && return
 
-                  name="$(basename "$wp" | sed 's/\.[^.]*$//')"
-                  blur="$BLUR_DIR/''${name}-blurred.jpg"
+              local name blur
+              name="$(basename "$wp" | sed 's/\.[^.]*$//')"
+              blur="$BLUR_DIR/''${name}-blurred.jpg"
 
-                  if [ ! -f "$blur" ]; then
-                      magick "$wp" -blur 0x30 "$blur" 2>/dev/null && log "generated: $blur"
-                  fi
+              if [ ! -f "$blur" ]; then
+                  magick "$wp" -blur 0x30 "$blur" 2>/dev/null && log "generated: $blur"
+              fi
 
-                  mon="$(get_monitor)"
-                  if [ -n "$mon" ]; then
-                      awww img --namespace "$NAMESPACE" -o "$mon" "$blur" 2>/dev/null && log "backdrop: $blur"
-                  fi
-              done
+              local mon
+              mon="$(get_monitor)"
+              if [ -n "$mon" ]; then
+                  awww img --namespace "$NAMESPACE" -o "$mon" "$blur" 2>/dev/null && log "backdrop: $blur"
+              fi
           }
 
           log "starting..."
           sleep 3
           init_awww
-          sync_once
+          sync_blur
 
-          last_mtime="$(stat -c %Y "$WALLPAPERS_JSON" 2>/dev/null || echo 0)"
+          last_wp=""
           tick=0
 
           while true; do
               sleep "$POLL_INTERVAL"
 
-              if [ -f "$WALLPAPERS_JSON" ]; then
-                  cur_mtime="$(stat -c %Y "$WALLPAPERS_JSON" 2>/dev/null || echo 0)"
-                  if [ "$cur_mtime" != "$last_mtime" ]; then
-                      last_mtime="$cur_mtime"
-                      log "wallpapers.json changed, syncing..."
-                      sync_once
-                  fi
+              cur_wp="$(get_current_wallpaper)"
+              if [ "$cur_wp" != "$last_wp" ] && [ -n "$cur_wp" ]; then
+                  last_wp="$cur_wp"
+                  log "wallpaper changed, syncing..."
+                  sync_blur
               fi
 
               tick=$((tick + 1))
@@ -296,8 +237,9 @@ in
     in
     {
       Unit = {
-        After = [ "graphical-session.target" "noctalia-shell.service" ];
+        After = [ "graphical-session.target" "noctalia.service" ];
         PartOf = [ "graphical-session.target" ];
+        X-Restart-Triggers = [ noctaliaPackage ];
       };
       Install.WantedBy = [ "graphical-session.target" ];
       Service = {

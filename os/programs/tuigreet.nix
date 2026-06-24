@@ -1,19 +1,16 @@
-{ config, pkgs, ... }:
 {
+  config,
+  pkgs,
+  user,
+  ...
+}: {
   services.greetd = {
     enable = true;
-    settings.default_session = {
-      command = # bash
-        let
-          inherit (config.services.displayManager.sessionData) desktops;
-        in
-        # bash
-        ''
-          ${pkgs.tuigreet}/bin/tuigreet --time \
-            --sessions ${desktops}/share/xsessions:${desktops}/share/wayland-sessions \
-            --remember --remember-user-session --asterisks --cmd "dbus-run-session niri-session" \
-            --user-menu --greeting "Who TF Are You?" --window-padding 2'';
-      user = "greeter";
+    settings = {
+      default_session = {
+        user = user;
+        command = "${config.programs.niri.package}/bin/niri-session";
+      };
     };
   };
 

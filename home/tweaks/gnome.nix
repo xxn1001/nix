@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs.gnomeExtensions; [
     user-themes
@@ -6,7 +6,6 @@
     desktop-cube
     kimpanel
   ];
-  gtk.gtk4.theme = config.gtk.theme;
   dconf.settings = {
     "org/gnome/shell" = {
       disable-user-extensions = false;

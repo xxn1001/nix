@@ -55,9 +55,9 @@
     #           if ${pkgs.systemd}/bin/systemctl --user is-active caelestia.service; then
     #             run --silence ${pkgs.systemd}/bin/systemctl --user stop caelestia.service
     #           fi
-    #           if ${pkgs.systemd}/bin/systemctl --user is-active noctalia-shell.service; then
-    #             run --silence ${pkgs.systemd}/bin/systemctl --user stop noctalia-shell.service
-    #           fi
+#           if ${pkgs.systemd}/bin/systemctl --user is-active noctalia.service; then
+#             run --silence ${pkgs.systemd}/bin/systemctl --user stop noctalia.service
+#           fi
     #           run --silence ${pkgs.systemd}/bin/systemctl --user start ${config.desktopShell}.service
     #         '';
     #   };
