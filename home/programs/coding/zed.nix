@@ -7,7 +7,7 @@
     ];
     userSettings = {
       features = {
-        copilot = true;
+        copilot = false;
       };
       vim_mode = true;
       hover_popover_enabled = true;
@@ -23,11 +23,7 @@
       relative_line_numbers = true;
       inlay_hints.enabled = true;
       assistant = {
-        enabled = true;
-        # default_model = {
-        #   provider = "deepseek";
-        #   model = "deepseek-reasoner";
-        # };
+        enabled = false;
       };
       enable_language_server = true;
       format_on_save = "on";
@@ -40,17 +36,6 @@
       languages = {
         Markdown.format_on_save = true;
       };
-      # language_models.deepseek = {
-      #   api_url = "https://api.deepseek.com";
-      #   available_models = [
-      #     {
-      #       name = "deepseek-reasoner";
-      #       display_name = "DeepSeek Reasoner";
-      #       max_tokens = 64000;
-      #       max_output_tokens = 4096;
-      #     }
-      #   ];
-      # };
     };
   };
   stylix.targets.zed.enable = true;

@@ -22,7 +22,7 @@ home/programs/coding/nixvim/
 ├── treesitter.nix       # 语法高亮 + rainbow-delimiters
 ├── ufo.nix              # 代码折叠（treesitter + indent）
 ├── ui.nix               # Telescope、bufferline、which-key、gitsigns、colorizer
-├── mini.nix             # mini.align/files/hipatterns/indentscope/move
+├── mini.nix             # mini.align/hipatterns/indentscope/move
 ├── flash.nix            # 快速跳转（替代 hop.nvim）
 ├── noice.nix            # 命令行/消息 UI 增强
 │
@@ -51,6 +51,8 @@ home/programs/coding/nixvim/
 | `<C-s>` | 保存文件 |
 | `<leader>qq` | 保存全部并退出 |
 | `Q` | 关闭当前缓冲 |
+| `<leader>bn` | 切换到下一个缓冲区 |
+| `<leader>bp` | 切换到上一个缓冲区 |
 | `<leader>H` | 打开帮助文档 |
 
 ### 窗口管理
@@ -227,10 +229,15 @@ Telescope 内快捷键：
 
 ### 文件与项目
 - **neo-tree** — 文件树浏览器
-- **mini.files** — 轻量级文件编辑
 - **telescope** — 模糊搜索（fzf-native 加速）
 - **project-nvim** — 项目管理
 - **harpoon2** — 常用文件标记
+
+### Mini 系列
+- **mini.align** — 对齐文本
+- **mini.hipatterns** — 高亮模式（hex 颜色等）
+- **mini.indentscope** — 缩进作用域高亮
+- **mini.move** — 移动行/选区 (`<C-h/j/k/l>`)
 
 ### 工具
 - **flash.nvim** — 快速跳转
@@ -240,13 +247,6 @@ Telescope 内快捷键：
 
 ### Git
 - **gitsigns** — 行级 Git 变更（Blame/Hunk/Diff）
-
-### Mini 系列
-- **mini.align** — 对齐文本
-- **mini.files** — 轻量文件管理器
-- **mini.hipatterns** — 高亮模式（hex 颜色等）
-- **mini.indentscope** — 缩进作用域高亮
-- **mini.move** — 移动行/选区 (`<C-h/j/k/l>`)
 
 ---
 

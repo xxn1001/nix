@@ -14,6 +14,20 @@
       options = { expr = true; silent = true; };
     }
 
+    # --- 缓冲区切换 ---
+    {
+      mode = "n";
+      key = "<leader>bn";
+      action = "<cmd>bnext<CR>";
+      options = { silent = true; desc = "下一个缓冲区"; };
+    }
+    {
+      mode = "n";
+      key = "<leader>bp";
+      action = "<cmd>bprevious<CR>";
+      options = { silent = true; desc = "上一个缓冲区"; };
+    }
+
     # --- 保存/退出 ---
     {
       mode = [ "i" "n" "v" "s" ];

@@ -3,7 +3,6 @@
     mini.enable = true;
     mini.modules = {
       align = { };
-      files = { mappings = { close = "<Esc>"; }; };
       hipatterns = { hex_color = "hipatterns.gen_highlighter.hex_color()"; };
       indentscope = { };
       move = {

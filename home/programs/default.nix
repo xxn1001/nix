@@ -1,6 +1,5 @@
 {
   imports = [
-    ./vscodium
     ./browser.nix
     ./terminal
     ./shell

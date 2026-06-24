@@ -9,5 +9,6 @@
     ./nixvim
     ./helix
     ./python.nix
+    ./vscodium.nix
   ];
 }
