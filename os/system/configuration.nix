@@ -110,6 +110,7 @@
       polkit_gnome
       libguestfs-with-appliance
       go
+      android-tools
     ];
 
     variables = {

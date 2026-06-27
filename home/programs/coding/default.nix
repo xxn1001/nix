@@ -7,8 +7,8 @@
     ./cpp.nix
     ./rust.nix
     ./nixvim
+    ./vscodium
     ./helix
     ./python.nix
-    ./vscodium.nix
   ];
 }

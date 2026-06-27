@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 let
   jonathanharty.gruvbox-material-icon-theme =
     pkgs.vscode-utils.buildVscodeMarketplaceExtension {
@@ -22,9 +22,17 @@ in
         ## Go
         golang.go
 
+        ## Python
+        ms-python.python
+        ms-python.vscode-pylance
+        ms-toolsai.jupyter
+
         ## Nix
         jnoortheen.nix-ide
         arrterian.nix-env-selector
+
+        ## Vim keybindings
+        asvetliakov.vscode-neovim
 
         ## Others
         ziglang.vscode-zig
@@ -127,6 +135,16 @@ in
           "showGlobalVariables" = true;
         };
 
+        ## Python
+        "python.defaultInterpreterPath" = "${pkgs.python3}/bin/python3";
+
+        ## Jupyter
+        "jupyter.interactiveWindow.textEditor.executeSelection" = true;
+        "notebook.cellToolbarLocation" = {
+          default = "right";
+          "jupyter-notebook" = "left";
+        };
+
         ## Zig
         "zig.path" = "zig";
         "zig.zls.path" = "zls";
@@ -137,6 +155,15 @@ in
         ## Nix
         "nix.serverPath" = "nixd";
         "nix.enableLanguageServer" = true;
+
+        ## VSCode Neovim
+        "vscode-neovim.NVIM_APP_NAME" = "nvim-vscode";
+        "vscode-neovim.neovimInitVimPaths.linux" = "${config.home.homeDirectory}/.config/nvim-vscode/init.lua";
+        "vscode-neovim.neovimExecutablePaths.linux" = "${pkgs.neovim}/bin/nvim";
+        "vscode-neovim.logLevel" = "warn";
+        "extensions.experimental.affinity" = {
+          "asvetliakov.vscode-neovim" = 1;
+        };
       };
 
       keybindings = [

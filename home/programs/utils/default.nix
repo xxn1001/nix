@@ -49,7 +49,6 @@
     bazaar
     podman-compose
     scrcpy
-    android-tools
     cliphist
     file-roller
     file
